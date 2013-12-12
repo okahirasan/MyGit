@@ -1,0 +1,23 @@
+MongoDb
+参考サイト：http://gihyo.jp/dev/serial/01/mongodb/0001?page=2
+
+■MongoDbインストール：http://www.mongodb.org/downloads
+ver:MongoDB2.2系　※xp：MongoDB2.0系
+DIR構成
+|--bin
+|    |--mongod.exe  : MongoDBの本体です。
+|    |--mongo.exe   : MongoDBのクライアントです。
+|    ..
+|--GNU-AGPL-3.0
+|--READMEn
+
+■データディレクトリ作成
+ mkdir C:\data\db
+ 
+■MongoDBの起動
+ mongod.exe
+ 
+■クライアントの起動
+ mongo.exe
+ 
+■データベースの作成
