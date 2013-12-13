@@ -11,13 +11,43 @@ DIR構成
 |--GNU-AGPL-3.0
 |--READMEn
 
-■データディレクトリ作成
+■データディレクトリ作成　※作成しておかないとexe起動できない
  mkdir C:\data\db
  
 ■MongoDBの起動
- mongod.exe
+ mongod.exe　※データディレクトリ未作成だとexe起動できない
  
 ■クライアントの起動
  mongo.exe
  
 ■データベースの作成
+ use DB名称
+
+■インデックスの作成
+db.コレクション名.ensureIndex({オブジェクト名:1});　※オブジェクト名:1←「1」は昇順の意味「-1」は「降順」を意味している。
+
+検索コマンド例
+インサート　パターン１
+> obj1 = { Name : "test1", Price : 100, Category : "material" };
+> db.Orders.save(obj1);
+
+インサート　パターン２
+> db.コレクション名.insert({ Name : "test1", Price : 100, Category : "material" });
+
+検索
+db.Orders.find()　全検索
+
+db.Orders.find({Name:"test1"});　オブジェクト指定検索
+
+db.Orders.find({Price: {$gt: 50}});
+
+複合インデックスを作成する場合のコード例
+db.Orders.ensureIndex({Name:1, Price:-1});
+
+※　注意点
+１．{Name:1, Price:-1}　インデックス可
+２．{Name:-1, Price:1}　インデックス可
+３．{Name:1, Price:1}　インデックス不可
+４．{Name:-1, Price:-1　インデックス　インデックス不可
+
+■シェーディング　参考サイト　https://wiki.mongodb.com/display/DOCSJP/Sharding
