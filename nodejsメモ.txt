@@ -22,12 +22,25 @@ node.js フレームワーク
 http://nantokaworks.com/p1101/
 ■sails 
 インストール
-npm install -g sails@0.8.9
+npm install -g sails@0.9.4
 ↑時間かかるよ
 
 バージョン確認
 sails -v
 
+■mongoDBを利用する場合
+npm install sails-mongo
+adapter.js の修正
+'default': 'desk',→'default': 'mongo',
+↓追加
+   mongo: {
+    module   : 'sails-mongo',
+    host     : 'localhost',
+    port     : 27017,
+    user     : 'sa',
+    password : 'intel',
+    database : 'testJob'
+    }
 
 アプリのひな形　※（sails_oar任意　アプリ名）
 sails new sails_oar
