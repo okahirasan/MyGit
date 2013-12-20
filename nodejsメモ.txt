@@ -17,6 +17,7 @@ Mac OS X環境では/usr/local/lib/node_modulesにライブラリがインストールされます。
 http://www.nodebeginner.org/index-jp.html
 
 http://blog.craftgear.net/
+http://articles.nakaji.me/sails-tutorial
 
 node.js フレームワーク
 http://nantokaworks.com/p1101/
