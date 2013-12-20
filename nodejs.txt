@@ -1,0 +1,22 @@
+http://nodejs.org/download/
+node.js インストール
+
+npm install -gオプションの意味
+
+npm installで-gオプションを指定した場合はグローバルインストールと呼ばれ、
+Mac OS X環境では/usr/local/lib/node_modulesにライブラリがインストールされます。
+同時に同ディレクトリにパスが通るようになり、どこからでもコマンドが呼び出せるようになります。
+
+-gオプションを指定しない場合
+
+-gオプションを指定しない場合はローカルインストールと呼ばれ、
+カレントディレクトリ配下にnode_modulesというディレクトリが作成され、
+その配下にライブラリがインストールされるようになります。
+
+参考サイト
+http://www.nodebeginner.org/index-jp.html
+
+http://blog.craftgear.net/
+
+node.js フレームワーク
+http://nantokaworks.com/p1101/

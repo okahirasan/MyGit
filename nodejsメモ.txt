@@ -61,3 +61,26 @@ sails generate model hoge
 
 Controller  を生成します　※（fuga任意　コントローラ名）
 sails generate controller fuga
+
+■sails　Partialの方法
+<%- partial('template/test') %>
+※ejsは記載しない、パスをかくだけ
+
+
+■layoutの切り替え方法
+views直下に対象のlayoutを配置
+コントローラ.jsにてlayoutを設定する
+サンプル
+  test: function (req,res) {
+    res.view({
+            _layoutFile: '../layout2'
+        });
+  }
+//test アクション
+layoutはejsファイルであること
+
+http://sailsjs.org/#!documentation/views
+
+■viewModelはノックアウトｊｓがよいかも
+参考サイト
+１．http://jp.techcrunch.com/2011/09/10/20110909node-js-knockout-2011-winners-revealed/
