@@ -14,7 +14,13 @@ Mac OS X環境では/usr/local/lib/node_modulesにライブラリがインストールされます。
 その配下にライブラリがインストールされるようになります。
 
 参考サイト
+http://blog.8maki.jp/2011/01/marketgeek_nodejs_mongodb_outline.html
+
+
 http://www.nodebeginner.org/index-jp.html
+
+https://github.com/hoschi/test_tvShowManager/blob/master/api/models/Settings.js
+https://github.com/thoughtpalette/SailsJS_SinglePageAPP/blob/master/config/passport.js
 
 http://blog.craftgear.net/
 http://articles.nakaji.me/sails-tutorial

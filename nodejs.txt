@@ -20,3 +20,12 @@ http://blog.craftgear.net/
 
 node.js フレームワーク
 http://nantokaworks.com/p1101/
+
+
+node.js
+
+EJS テンプレートエンジン
+<%= 値 %>　：エスケープ処理する
+<%- 値 %>　：エスケープ処理しない
+<% スクリプト %>
+
