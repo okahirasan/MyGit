@@ -14,6 +14,8 @@ Mac OS X環境では/usr/local/lib/node_modulesにライブラリがインストールされます。
 その配下にライブラリがインストールされるようになります。
 
 参考サイト
+http://memo.yomukaku.net/entries/7lTmKrk
+
 http://www.nodebeginner.org/index-jp.html
 
 http://blog.craftgear.net/
@@ -28,4 +30,25 @@ EJS テンプレートエンジン
 <%= 値 %>　：エスケープ処理する
 <%- 値 %>　：エスケープ処理しない
 <% スクリプト %>
+
+ejs.render( テンプレートデータ , オプション );
+
+moduleの書き方
+var xxx = require('xxx')
+
+関数をexportする
+function xxx (a, b) {
+  return a + b;
+}
+
+※１　module.exports = sum;
+
+※２module.exports = {
+  sum: sum
+}
+↑書き方二通りあるよ
+
+呼出し側　※ファイル名：拡張子はなくてもよい
+var sum = require('./abc.js');
+
 

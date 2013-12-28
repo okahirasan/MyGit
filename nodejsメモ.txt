@@ -16,6 +16,7 @@ Mac OS X環境では/usr/local/lib/node_modulesにライブラリがインストールされます。
 参考サイト
 http://blog.8maki.jp/2011/01/marketgeek_nodejs_mongodb_outline.html
 
+http://hiyokur.hatenablog.com/entry/2013/12/17/165140
 
 http://www.nodebeginner.org/index-jp.html
 
