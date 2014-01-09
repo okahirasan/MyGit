@@ -18,30 +18,24 @@ module.exports = {
     });
   },
   index: function(req, res, next) {
-    var fs = require('fs');
     var async = require('async');
-    var test;
     var tasks = [];
-    //var hoge = "a";
-    //tasks.push(function(next) { fs.mkdir('./hoge', next); }); 
-    //tasks.push(function(next) { fs.mkdir('./hoge/piyo', next); }); 
-    tasks.push(function(next) { test:JobType.find(test,next);}); 
     tasks.push(function(next) { User.find(next);}); 
+    tasks.push(function(next) { JobType.find(next);}); 
+    //tasks.push(function(next) { JobType.findOne(next);}); 
 
     async.series(tasks, function(err, results) {
-          console.log(results[0]);
-          //console.log(test);
-          //console.log(users);
-
       if(err) {
         // ÉGÉâÅ[èàóù
         return;
       }
-
+    res.view({
+        users: results[0],
+        jobTypes: results[1]
+    })
       console.log('success');
     });
-
-  res.json("abc");
+    
 }
 
 };
