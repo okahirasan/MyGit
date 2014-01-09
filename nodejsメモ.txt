@@ -27,6 +27,7 @@ http://blog.craftgear.net/
 http://articles.nakaji.me/sails-tutorial
 
 node.js フレームワーク
+※https://github.com/carlodicelico/sails-gamify
 http://nantokaworks.com/p1101/
 ■sails 
 インストール
