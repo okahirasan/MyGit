@@ -32,7 +32,7 @@
       </li>
       <% }) %>
         
-
+<button>test</button>
         <h2>Getting started</h2>
         <p>Don't worry, we've got your back.</p>
         <div class="steps">
@@ -103,4 +103,24 @@
         </ul>
     </div>
 </div>
-<script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+  });
+
+  $(function(){
+    $("button").click(function(){
+      $.ajax({
+        type: 'GET',
+        url: '/user/show',
+        dataType: 'json',
+        success: function(json){
+  
+        alert(json);
+
+        }
+      });
+    })
+  })
+</script>
