@@ -1,114 +1,114 @@
-ƒtƒŒƒ“ƒ`
-ƒCƒ^ƒŠƒAƒ“
-—mH‘S”Ê
-‘nìEƒ_ƒCƒjƒ“ƒO
-‹ğ‰®
-ƒo[ƒ‹Eƒo[
-˜aH‘S”Ê
-õi
-“ú–{—¿—EŠ„–BE‰ùÎ
-Ä’¹
-Ä“÷
-‚¤‚Ç‚ñE‚»‚ÎEƒ‰[ƒƒ“
-’†‰Ø—¿—
-ƒAƒWƒAEƒGƒXƒjƒbƒN
-ƒtƒ@ƒXƒgƒt[ƒhEƒtƒ@ƒ~ƒŒƒX
-ƒJƒtƒF
-‹øƒJƒcE‹ø—g‚°
-‚¨D‚İÄ‚«E‚½‚±Ä‚«
-ƒXƒe[ƒLE“S”ÂÄ
-ƒOƒ‰ƒ“ƒƒ]ƒ“EƒŠƒXƒgƒ‰ƒ“ƒe
-ƒzƒeƒ‹E—·ŠÙ
-ƒEƒFƒfƒBƒ“ƒOEƒQƒXƒgƒnƒEƒX
-ƒpƒeƒBƒXƒŠ[E»‰Ù
-ƒu[ƒ‰ƒ“ƒWƒFƒŠ[E»ƒpƒ“
-’†Hi‘yØE‘î”z‚È‚Çj
-H•iE¬”„E—¬’Ê
-‹‹HEĞˆõH“°E‰îŒìE•a‰@
-‚»‚Ì‘¼
+ãƒ•ãƒ¬ãƒ³ãƒ
+ã‚¤ã‚¿ãƒªã‚¢ãƒ³
+æ´‹é£Ÿå…¨èˆ¬
+å‰µä½œãƒ»ãƒ€ã‚¤ãƒ‹ãƒ³ã‚°
+å±…é…’å±‹
+ãƒãƒ¼ãƒ«ãƒ»ãƒãƒ¼
+å’Œé£Ÿå…¨èˆ¬
+å¯¿å¸
+æ—¥æœ¬æ–™ç†ãƒ»å‰²çƒ¹ãƒ»æ‡çŸ³
+ç„¼é³¥
+ç„¼è‚‰
+ã†ã©ã‚“ãƒ»ãã°ãƒ»ãƒ©ãƒ¼ãƒ¡ãƒ³
+ä¸­è¯æ–™ç†
+ã‚¢ã‚¸ã‚¢ãƒ»ã‚¨ã‚¹ãƒ‹ãƒƒã‚¯
+ãƒ•ã‚¡ã‚¹ãƒˆãƒ•ãƒ¼ãƒ‰ãƒ»ãƒ•ã‚¡ãƒŸãƒ¬ã‚¹
+ã‚«ãƒ•ã‚§
+ä¸²ã‚«ãƒ„ãƒ»ä¸²æšã’
+ãŠå¥½ã¿ç„¼ããƒ»ãŸã“ç„¼ã
+ã‚¹ãƒ†ãƒ¼ã‚­ãƒ»é‰„æ¿ç„¼
+ã‚°ãƒ©ãƒ³ãƒ¡ã‚¾ãƒ³ãƒ»ãƒªã‚¹ãƒˆãƒ©ãƒ³ãƒ†
+ãƒ›ãƒ†ãƒ«ãƒ»æ—…é¤¨
+ã‚¦ã‚§ãƒ‡ã‚£ãƒ³ã‚°ãƒ»ã‚²ã‚¹ãƒˆãƒã‚¦ã‚¹
+ãƒ‘ãƒ†ã‚£ã‚¹ãƒªãƒ¼ãƒ»è£½è“
+ãƒ–ãƒ¼ãƒ©ãƒ³ã‚¸ã‚§ãƒªãƒ¼ãƒ»è£½ãƒ‘ãƒ³
+ä¸­é£Ÿï¼ˆæƒ£èœãƒ»å®…é…ãªã©ï¼‰
+é£Ÿå“ãƒ»å°å£²ãƒ»æµé€š
+çµ¦é£Ÿãƒ»ç¤¾å“¡é£Ÿå ‚ãƒ»ä»‹è­·ãƒ»ç—…é™¢
+ãã®ä»–
 
-http://localhost:1337/genre/create?name=ƒtƒŒƒ“ƒ`&&sort=1
-http://localhost:1337/genre/create?name=ƒCƒ^ƒŠƒAƒ“&&sort=2
-http://localhost:1337/genre/create?name=—mH‘S”Ê&&sort=3
-http://localhost:1337/genre/create?name=‘nìEƒ_ƒCƒjƒ“ƒO&&sort=4
-http://localhost:1337/genre/create?name=‹ğ‰®&&sort=5
-http://localhost:1337/genre/create?name=ƒo[ƒ‹Eƒo[&&sort=6
-http://localhost:1337/genre/create?name=˜aH‘S”Ê&&sort=7
-http://localhost:1337/genre/create?name=õi&&sort=8
-http://localhost:1337/genre/create?name=“ú–{—¿—EŠ„–BE‰ùÎ&&sort=9
-http://localhost:1337/genre/create?name=Ä’¹&&sort=10
-http://localhost:1337/genre/create?name=Ä“÷&&sort=11
-http://localhost:1337/genre/create?name=‚¤‚Ç‚ñE‚»‚ÎEƒ‰[ƒƒ“&&sort=12
-http://localhost:1337/genre/create?name=’†‰Ø—¿—&&sort=13
-http://localhost:1337/genre/create?name=ƒAƒWƒAEƒGƒXƒjƒbƒN&&sort=14
-http://localhost:1337/genre/create?name=ƒtƒ@ƒXƒgƒt[ƒhEƒtƒ@ƒ~ƒŒƒX&&sort=15
-http://localhost:1337/genre/create?name=ƒJƒtƒF&&sort=16
-http://localhost:1337/genre/create?name=‹øƒJƒcE‹ø—g‚°&&sort=17
-http://localhost:1337/genre/create?name=‚¨D‚İÄ‚«E‚½‚±Ä‚«&&sort=18
-http://localhost:1337/genre/create?name=ƒXƒe[ƒLE“S”ÂÄ&&sort=19
-http://localhost:1337/genre/create?name=ƒOƒ‰ƒ“ƒƒ]ƒ“EƒŠƒXƒgƒ‰ƒ“ƒe&&sort=20
-http://localhost:1337/genre/create?name=ƒzƒeƒ‹E—·ŠÙ&&sort=21
-http://localhost:1337/genre/create?name=ƒEƒFƒfƒBƒ“ƒOEƒQƒXƒgƒnƒEƒX&&sort=22
-http://localhost:1337/genre/create?name=ƒpƒeƒBƒXƒŠ[E»‰Ù&&sort=23
-http://localhost:1337/genre/create?name=ƒu[ƒ‰ƒ“ƒWƒFƒŠ[E»ƒpƒ“&&sort=24
-http://localhost:1337/genre/create?name=’†Hi‘yØE‘î”z‚È‚Çj&&sort=25
-http://localhost:1337/genre/create?name=H•iE¬”„E—¬’Ê&&sort=26
-http://localhost:1337/genre/create?name=‹‹HEĞˆõH“°E‰îŒìE•a‰@&&sort=27
-http://localhost:1337/genre/create?name=‚»‚Ì‘¼&&sort=28
+http://localhost:1337/genre/create?name=ãƒ•ãƒ¬ãƒ³ãƒ&&sort=1
+http://localhost:1337/genre/create?name=ã‚¤ã‚¿ãƒªã‚¢ãƒ³&&sort=2
+http://localhost:1337/genre/create?name=æ´‹é£Ÿå…¨èˆ¬&&sort=3
+http://localhost:1337/genre/create?name=å‰µä½œãƒ»ãƒ€ã‚¤ãƒ‹ãƒ³ã‚°&&sort=4
+http://localhost:1337/genre/create?name=å±…é…’å±‹&&sort=5
+http://localhost:1337/genre/create?name=ãƒãƒ¼ãƒ«ãƒ»ãƒãƒ¼&&sort=6
+http://localhost:1337/genre/create?name=å’Œé£Ÿå…¨èˆ¬&&sort=7
+http://localhost:1337/genre/create?name=å¯¿å¸&&sort=8
+http://localhost:1337/genre/create?name=æ—¥æœ¬æ–™ç†ãƒ»å‰²çƒ¹ãƒ»æ‡çŸ³&&sort=9
+http://localhost:1337/genre/create?name=ç„¼é³¥&&sort=10
+http://localhost:1337/genre/create?name=ç„¼è‚‰&&sort=11
+http://localhost:1337/genre/create?name=ã†ã©ã‚“ãƒ»ãã°ãƒ»ãƒ©ãƒ¼ãƒ¡ãƒ³&&sort=12
+http://localhost:1337/genre/create?name=ä¸­è¯æ–™ç†&&sort=13
+http://localhost:1337/genre/create?name=ã‚¢ã‚¸ã‚¢ãƒ»ã‚¨ã‚¹ãƒ‹ãƒƒã‚¯&&sort=14
+http://localhost:1337/genre/create?name=ãƒ•ã‚¡ã‚¹ãƒˆãƒ•ãƒ¼ãƒ‰ãƒ»ãƒ•ã‚¡ãƒŸãƒ¬ã‚¹&&sort=15
+http://localhost:1337/genre/create?name=ã‚«ãƒ•ã‚§&&sort=16
+http://localhost:1337/genre/create?name=ä¸²ã‚«ãƒ„ãƒ»ä¸²æšã’&&sort=17
+http://localhost:1337/genre/create?name=ãŠå¥½ã¿ç„¼ããƒ»ãŸã“ç„¼ã&&sort=18
+http://localhost:1337/genre/create?name=ã‚¹ãƒ†ãƒ¼ã‚­ãƒ»é‰„æ¿ç„¼&&sort=19
+http://localhost:1337/genre/create?name=ã‚°ãƒ©ãƒ³ãƒ¡ã‚¾ãƒ³ãƒ»ãƒªã‚¹ãƒˆãƒ©ãƒ³ãƒ†&&sort=20
+http://localhost:1337/genre/create?name=ãƒ›ãƒ†ãƒ«ãƒ»æ—…é¤¨&&sort=21
+http://localhost:1337/genre/create?name=ã‚¦ã‚§ãƒ‡ã‚£ãƒ³ã‚°ãƒ»ã‚²ã‚¹ãƒˆãƒã‚¦ã‚¹&&sort=22
+http://localhost:1337/genre/create?name=ãƒ‘ãƒ†ã‚£ã‚¹ãƒªãƒ¼ãƒ»è£½è“&&sort=23
+http://localhost:1337/genre/create?name=ãƒ–ãƒ¼ãƒ©ãƒ³ã‚¸ã‚§ãƒªãƒ¼ãƒ»è£½ãƒ‘ãƒ³&&sort=24
+http://localhost:1337/genre/create?name=ä¸­é£Ÿï¼ˆæƒ£èœãƒ»å®…é…ãªã©ï¼‰&&sort=25
+http://localhost:1337/genre/create?name=é£Ÿå“ãƒ»å°å£²ãƒ»æµé€š&&sort=26
+http://localhost:1337/genre/create?name=çµ¦é£Ÿãƒ»ç¤¾å“¡é£Ÿå ‚ãƒ»ä»‹è­·ãƒ»ç—…é™¢&&sort=27
+http://localhost:1337/genre/create?name=ãã®ä»–&&sort=28
 
-ƒz[ƒ‹EƒT[ƒrƒXƒXƒ^ƒbƒt
-’²—EƒLƒbƒ`ƒ“ƒXƒ^ƒbƒt
-“X’·Eƒ}ƒl[ƒWƒƒ[iŒó•âj
-—¿—’·EƒVƒFƒtiŒó•âj
-»‰ÙAƒpƒeƒBƒVƒG
-»ƒpƒ“Aƒu[ƒ‰ƒ“ƒWƒF
-ƒ\ƒ€ƒŠƒGAƒo[ƒeƒ“ƒ_[AƒoƒŠƒXƒ^
-SVEƒGƒŠƒAƒ}ƒl[ƒWƒƒ[iŒó•âj
-‰c‹ÆŠÇ—EAŒo‰cŠ²•”
-–{•”Eil–A‹Æ‘ÔEƒƒjƒ…[ŠJ”­“™j
-ƒEƒFƒfƒBƒ“ƒOƒvƒ‰ƒ“ƒi[
-”Ì”„ƒXƒ^ƒbƒt
-—«E˜a‘•ƒz[ƒ‹
-‰h—{mEŠÇ—‰h—{m
-ƒX[ƒp[ƒtƒƒAE¬”„
-¶Y‰ÁHi¸“÷E‘N‹›EÂ‰Ê‚È‚Çj
-‚»‚Ì‘¼Eí
+ãƒ›ãƒ¼ãƒ«ãƒ»ã‚µãƒ¼ãƒ“ã‚¹ã‚¹ã‚¿ãƒƒãƒ•
+èª¿ç†ãƒ»ã‚­ãƒƒãƒãƒ³ã‚¹ã‚¿ãƒƒãƒ•
+åº—é•·ãƒ»ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ï¼ˆå€™è£œï¼‰
+æ–™ç†é•·ãƒ»ã‚·ã‚§ãƒ•ï¼ˆå€™è£œï¼‰
+è£½è“ã€ãƒ‘ãƒ†ã‚£ã‚·ã‚¨
+è£½ãƒ‘ãƒ³ã€ãƒ–ãƒ¼ãƒ©ãƒ³ã‚¸ã‚§
+ã‚½ãƒ ãƒªã‚¨ã€ãƒãƒ¼ãƒ†ãƒ³ãƒ€ãƒ¼ã€ãƒãƒªã‚¹ã‚¿
+SVãƒ»ã‚¨ãƒªã‚¢ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ï¼ˆå€™è£œï¼‰
+å–¶æ¥­ç®¡ç†è·ã€çµŒå–¶å¹¹éƒ¨
+æœ¬éƒ¨è·ï¼ˆäººäº‹ã€æ¥­æ…‹ãƒ»ãƒ¡ãƒ‹ãƒ¥ãƒ¼é–‹ç™ºç­‰ï¼‰
+ã‚¦ã‚§ãƒ‡ã‚£ãƒ³ã‚°ãƒ—ãƒ©ãƒ³ãƒŠãƒ¼
+è²©å£²ã‚¹ã‚¿ãƒƒãƒ•
+å¥³å°†ãƒ»å’Œè£…ãƒ›ãƒ¼ãƒ«
+æ „é¤Šå£«ãƒ»ç®¡ç†æ „é¤Šå£«
+ã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒ•ãƒ­ã‚¢ãƒ»å°å£²
+ç”Ÿç”£åŠ å·¥ï¼ˆç²¾è‚‰ãƒ»é®®é­šãƒ»é’æœãªã©ï¼‰
+ãã®ä»–è·ç¨®
 
-http://localhost:1337/jobtype/create?name=ƒz[ƒ‹EƒT[ƒrƒXƒXƒ^ƒbƒt&&sort=1
-http://localhost:1337/jobtype/create?name=’²—EƒLƒbƒ`ƒ“ƒXƒ^ƒbƒt&&sort=2
-http://localhost:1337/jobtype/create?name=“X’·Eƒ}ƒl[ƒWƒƒ[iŒó•âj&&sort=3
-http://localhost:1337/jobtype/create?name=—¿—’·EƒVƒFƒtiŒó•âj&&sort=4
-http://localhost:1337/jobtype/create?name=»‰ÙAƒpƒeƒBƒVƒG&&sort=5
-http://localhost:1337/jobtype/create?name=»ƒpƒ“Aƒu[ƒ‰ƒ“ƒWƒF&&sort=6
-http://localhost:1337/jobtype/create?name=ƒ\ƒ€ƒŠƒGAƒo[ƒeƒ“ƒ_[AƒoƒŠƒXƒ^&&sort=7
-http://localhost:1337/jobtype/create?name=SVEƒGƒŠƒAƒ}ƒl[ƒWƒƒ[iŒó•âj&&sort=8
-http://localhost:1337/jobtype/create?name=‰c‹ÆŠÇ—EAŒo‰cŠ²•”&&sort=9
-http://localhost:1337/jobtype/create?name=–{•”Eil–A‹Æ‘ÔEƒƒjƒ…[ŠJ”­“™j&&sort=10
-http://localhost:1337/jobtype/create?name=ƒEƒFƒfƒBƒ“ƒOƒvƒ‰ƒ“ƒi[&&sort=11
-http://localhost:1337/jobtype/create?name=”Ì”„ƒXƒ^ƒbƒt&&sort=12
-http://localhost:1337/jobtype/create?name=—«E˜a‘•ƒz[ƒ‹&&sort=13
-http://localhost:1337/jobtype/create?name=‰h—{mEŠÇ—‰h—{m&&sort=14
-http://localhost:1337/jobtype/create?name=ƒX[ƒp[ƒtƒƒAE¬”„&&sort=15
-http://localhost:1337/jobtype/create?name=¶Y‰ÁHi¸“÷E‘N‹›EÂ‰Ê‚È‚Çj&&sort=16
-http://localhost:1337/jobtype/create?name=‚»‚Ì‘¼Eí&&sort=17
+http://localhost:1337/jobtype/create?name=ãƒ›ãƒ¼ãƒ«ãƒ»ã‚µãƒ¼ãƒ“ã‚¹ã‚¹ã‚¿ãƒƒãƒ•&&sort=1
+http://localhost:1337/jobtype/create?name=èª¿ç†ãƒ»ã‚­ãƒƒãƒãƒ³ã‚¹ã‚¿ãƒƒãƒ•&&sort=2
+http://localhost:1337/jobtype/create?name=åº—é•·ãƒ»ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ï¼ˆå€™è£œï¼‰&&sort=3
+http://localhost:1337/jobtype/create?name=æ–™ç†é•·ãƒ»ã‚·ã‚§ãƒ•ï¼ˆå€™è£œï¼‰&&sort=4
+http://localhost:1337/jobtype/create?name=è£½è“ã€ãƒ‘ãƒ†ã‚£ã‚·ã‚¨&&sort=5
+http://localhost:1337/jobtype/create?name=è£½ãƒ‘ãƒ³ã€ãƒ–ãƒ¼ãƒ©ãƒ³ã‚¸ã‚§&&sort=6
+http://localhost:1337/jobtype/create?name=ã‚½ãƒ ãƒªã‚¨ã€ãƒãƒ¼ãƒ†ãƒ³ãƒ€ãƒ¼ã€ãƒãƒªã‚¹ã‚¿&&sort=7
+http://localhost:1337/jobtype/create?name=SVãƒ»ã‚¨ãƒªã‚¢ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ï¼ˆå€™è£œï¼‰&&sort=8
+http://localhost:1337/jobtype/create?name=å–¶æ¥­ç®¡ç†è·ã€çµŒå–¶å¹¹éƒ¨&&sort=9
+http://localhost:1337/jobtype/create?name=æœ¬éƒ¨è·ï¼ˆäººäº‹ã€æ¥­æ…‹ãƒ»ãƒ¡ãƒ‹ãƒ¥ãƒ¼é–‹ç™ºç­‰ï¼‰&&sort=10
+http://localhost:1337/jobtype/create?name=ã‚¦ã‚§ãƒ‡ã‚£ãƒ³ã‚°ãƒ—ãƒ©ãƒ³ãƒŠãƒ¼&&sort=11
+http://localhost:1337/jobtype/create?name=è²©å£²ã‚¹ã‚¿ãƒƒãƒ•&&sort=12
+http://localhost:1337/jobtype/create?name=å¥³å°†ãƒ»å’Œè£…ãƒ›ãƒ¼ãƒ«&&sort=13
+http://localhost:1337/jobtype/create?name=æ „é¤Šå£«ãƒ»ç®¡ç†æ „é¤Šå£«&&sort=14
+http://localhost:1337/jobtype/create?name=ã‚¹ãƒ¼ãƒ‘ãƒ¼ãƒ•ãƒ­ã‚¢ãƒ»å°å£²&&sort=15
+http://localhost:1337/jobtype/create?name=ç”Ÿç”£åŠ å·¥ï¼ˆç²¾è‚‰ãƒ»é®®é­šãƒ»é’æœãªã©ï¼‰&&sort=16
+http://localhost:1337/jobtype/create?name=ãã®ä»–è·ç¨®&&sort=17
 <% _.each(job.tags, function (tag) { %>
                           <a href="#">
                             <%= tag %>
                           </a>
                       <% }) %>
-http://localhost:1337/area/create?name=ŠÖ“Œ&&areas=[{'areaId':1,areaName:“Œ‹},{areaId:2,areaName:_“Şì},{areaId:3,areaName:ç—t},{areaId:4,areaName:é‹Ê},{areaId:5,areaName:ˆïé},{areaId:6,areaName:“È–Ø},{areaId:7,areaName:ŒQ”n}
+http://localhost:1337/area/create?name=é–¢æ±&&areas=[{'areaId':1,areaName:æ±äº¬},{areaId:2,areaName:ç¥å¥ˆå·},{areaId:3,areaName:åƒè‘‰},{areaId:4,areaName:åŸ¼ç‰},{areaId:5,areaName:èŒ¨åŸ},{areaId:6,areaName:æ ƒæœ¨},{areaId:7,areaName:ç¾¤é¦¬}
 
-http://localhost:1337/area/create?name=ŠÖ¼&&areas=[{areaId:8,areaName:‘åã},{areaId:9,areaName:‹“s},{areaId:10,areaName:•ºŒÉ},{areaId:11,areaName: ‰ê},{areaId:12,areaName:“Ş—Ç},{areaId:13,areaName:˜a‰ÌR}]
+http://localhost:1337/area/create?name=é–¢è¥¿&&areas=[{areaId:8,areaName:å¤§é˜ª},{areaId:9,areaName:äº¬éƒ½},{areaId:10,areaName:å…µåº«},{areaId:11,areaName:æ»‹è³€},{areaId:12,areaName:å¥ˆè‰¯},{areaId:13,areaName:å’Œæ­Œå±±}]
 
-http://localhost:1337/area/create?name=“ŒŠC&&areas=[{areaId:14,areaName:ˆ¤’m},{areaId:15,areaName:Ã‰ª},{areaId:16,areaName:Šò•Œ},{areaId:17,areaName:Od}]
+http://localhost:1337/area/create?name=æ±æµ·&&areas=[{areaId:14,areaName:æ„›çŸ¥},{areaId:15,areaName:é™å²¡},{areaId:16,areaName:å²é˜œ},{areaId:17,areaName:ä¸‰é‡}]
 
-http://localhost:1337/area/create?name=–kŠC“¹E“Œ–k&&areas=[{areaId:18,areaName:–kŠC“¹},{areaId:19,areaName:ÂX},{areaId:20,areaName:H“c},{areaId:21,areaName:Šâè},{areaId:22,areaName:‹{é},{areaId:23,areaName:•Ÿ“‡},{areaId:24,areaName:RŒ`}]
+http://localhost:1337/area/create?name=åŒ—æµ·é“ãƒ»æ±åŒ—&&areas=[{areaId:18,areaName:åŒ—æµ·é“},{areaId:19,areaName:é’æ£®},{areaId:20,areaName:ç§‹ç”°},{areaId:21,areaName:å²©æ‰‹},{areaId:22,areaName:å®®åŸ},{areaId:23,areaName:ç¦å³¶},{areaId:24,areaName:å±±å½¢}]
 
-http://localhost:1337/area/create?name=bM‰zE–k—¤&&areas=[{areaId:42,areaName:VŠƒ},{areaId:43,areaName:R—œ},{areaId:44,areaName:’·–ì},{areaId:45,areaName:•xR},{areaId:46,areaName:Îì},{areaId:47,areaName:•Ÿˆä}]
+http://localhost:1337/area/create?name=ç”²ä¿¡è¶Šãƒ»åŒ—é™¸&&areas=[{areaId:42,areaName:æ–°æ½Ÿ},{areaId:43,areaName:å±±æ¢¨},{areaId:44,areaName:é•·é‡},{areaId:45,areaName:å¯Œå±±},{areaId:46,areaName:çŸ³å·},{areaId:47,areaName:ç¦äº•}]
 
-http://localhost:1337/area/create?name=’†‘&&areas=[{areaId:33,areaName:L“‡},{areaId:34,areaName:‰ªR},{areaId:35,areaName:RŒû},{areaId:36,areaName:“‡ª},{areaId:37,areaName:’¹æ}]
+http://localhost:1337/area/create?name=ä¸­å›½&&areas=[{areaId:33,areaName:åºƒå³¶},{areaId:34,areaName:å²¡å±±},{areaId:35,areaName:å±±å£},{areaId:36,areaName:å³¶æ ¹},{areaId:37,areaName:é³¥å–}]
 
-http://localhost:1337/area/create?name=l‘&&areas=[{areaId:38,areaName:ì},{areaId:39,areaName:ˆ¤•Q},{areaId:40,areaName:‚’m},{areaId:41,areaName:“¿“‡}]
+http://localhost:1337/area/create?name=å››å›½&&areas=[{areaId:38,areaName:é¦™å·},{areaId:39,areaName:æ„›åª›},{areaId:40,areaName:é«˜çŸ¥},{areaId:41,areaName:å¾³å³¶}]
 
-http://localhost:1337/area/create?name=‹ãBE‰«“ê&&areas=[{areaId:25,areaName:•Ÿ‰ª},{areaId:26,areaName:ŒF–{},{areaId:27,areaName:­™“‡},{areaId:28,areaName:‘å•ª},{areaId:29,areaName:’·è},{areaId:30,areaName:‹{è},{areaId:31,areaName:²‰ê},{areaId:32,areaName:‰«“ê}]
+http://localhost:1337/area/create?name=ä¹å·ãƒ»æ²–ç¸„&&areas=[{areaId:25,areaName:ç¦å²¡},{areaId:26,areaName:ç†Šæœ¬},{areaId:27,areaName:é¹¿å…å³¶},{areaId:28,areaName:å¤§åˆ†},{areaId:29,areaName:é•·å´},{areaId:30,areaName:å®®å´},{areaId:31,areaName:ä½è³€},{areaId:32,areaName:æ²–ç¸„}]
 
