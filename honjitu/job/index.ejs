@@ -1,0 +1,215 @@
+<div id="main">
+  <!-- Title, Breadcrumb Start-->
+  <div class="breadcrumb-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+          <h2 class="title">募集中の検索結果一覧</h2>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+          <div class="breadcrumbs pull-right">
+            <ul>
+              <li></li>
+              <li>
+                <a href="./Home">Home</a>
+              </li>
+              <li>
+                <a href="#">募集中 一覧</a>
+              </li>
+              <li>すべて</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Title, Breadcrumb End-->
+  <!-- Main Content start-->
+  <div class="content">
+    <div class="container">
+      <div class="row">
+                <!-- Sidebar Start -->
+        <div class="sidebar col-lg-3 col-md-3 col-sm-4 col-xs-12">
+          <form action="/job/index" method="POST" id="sign-up-form" class="form-signin">
+<section id="style-switcher">
+  <h2><a href="#"><i class="icon-cog"></i></a></h2>
+     <h3>勤務地</h3>
+     <div class="layout-style">
+<select multiple class="populate" id="e19" style="width:280px"></select>
+     </div>
+    <h3></h3>
+     <div class="layout-style">
+      <input type="text" class="form-control" name="title" />
+     </div>
+     <input type="submit" class="btn-small btn-color" value="検索"/>
+</section>
+</form>
+
+<script src="http://ivaynberg.github.io/select2/js/jquery-1.7.1.min.js"></script>
+<script src="http://ivaynberg.github.io/select2/js/jquery-ui-1.8.20.custom.min.js"></script> <!-- for sortable example -->
+<script src="http://ivaynberg.github.io/select2/prettify/prettify.min.js"></script>
+<script id="script_e1">
+$(function() {
+   var opts=$("#source").html(), opts2="<option></option>"+opts;
+   $("select.populate").each(function() { var e=$(this); e.html(e.hasClass("placeholder")?opts2:opts); });
+   $(".examples article:odd").addClass("zebra");
+});
+</script>
+      <div class="span4" style="display:none;">
+            <p>
+              <select style="width:300px" id="source">
+              <% _.each(zone, function (zones) { %>
+                <optgroup label="<%= zones.Name %>">
+                
+                <% _.each(zones.Areas, function (area) { %>
+                <option value="<%= area.id %>"><%= area.name %></option> 
+                <% }) %>
+                  
+                </optgroup>
+              <% }) %>
+	      </select>
+            </p>
+	</div>
+<script id="script_e19">
+$(document).ready(function() {
+$("#e19").select2({ maximumSelectionSize: 10 });
+});
+</script>
+        </div>
+        <div class="posts-block col-lg-9 col-md-9 col-sm-8 col-xs-12">
+          <!--jobList start-->
+          <% _.each(jobs, function (job) { %>
+          <!--article start-->
+            <article class="post hentry">
+              <div style="float:left;">
+                <div>
+                  <div class="blog-entry-meta">
+                    <div class="blog-entry-meta-info">
+                      <i class="icon-user"></i>
+                      <a href="#" class="example_top blog-entry-meta-info" data-rel="popover"
+                      data-content="株式会社とり鉄　代表：山田太郎"data-placement="left" data-original-title="会社情報aa">
+                        <%= job.company.name %>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-image">
+                  <a href="/images/job/<%= job.id%>.jpg" data-rel="prettyPhoto">
+                    <span class="img-hover"></span>
+                    <span class="fullscreen">
+                      <i class="icon-search"></i>
+                    </span>
+                    <img src="/images/job/<%= job.id%>.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+              <div class="post-content-wrap">
+                <header class="post-header">
+                  <div class="post-date">
+                    <a class="date" href="#">
+                      <strong>18</strong>
+                      <i>11月</i>
+                    </a>
+                  </div>
+                  <h3 class="content-title">
+                    <%= job.title %>
+                  </h3>
+                  <div class="blog-entry-meta">
+                    <div class="blog-entry-meta-tags">
+                      <i class="icon-tags"></i>
+                      <% _.each(job.tags, function (tag) { %>
+                          <a href="#">
+                            <%= tag %>
+                          </a>
+                      <% }) %>
+                    </div>
+                    <div class="blog-entry-meta-comments">
+                      <i class="icon-comments"></i>
+                      <a href="#" class="blog-entry-meta-comments">
+                        <%= job.commentNum %> comments</a>
+                    </div>
+                  </div>
+                  <div class="blog-entry-meta">
+                    <div class="blog-entry-meta-info">
+                      <i class="icon-jpy"></i>
+                      <% _.each(job.jobType, function (type) { %>
+                        <%= type.name %>：<%= type.salary %>
+                      <% }) %>
+                    </div>
+                  </div>
+                  <div class="blog-entry-meta">
+                    <div class="blog-entry-meta-info">
+                       仕事内容：<%= job.contents %>
+                  </div>
+                  </div>
+                  <div class="blog-entry-meta">
+                    <div class="blog-entry-meta-info">
+                       応募要件：<%= job.conditions %>
+                  </div>
+                  </div>
+                  <div class="blog-entry-meta">
+                    <div class="blog-entry-meta-info">
+                       　勤務地：<%= job.adress1 %><%= job.adress2 %><%= job.adress3 %>
+                      </div>
+                  </div>
+                </header>
+
+
+              </div>
+              <div class="clearfix"></div>
+            </article>
+            <footer class="post-footer" style="clear:both;">
+              <a href="#" class="example btn-small btn-color" data-rel="popover"
+                      data-content="詳細の情報を表示させます。
+                              "data-placement="" data-original-title="募集情報">
+                <i class="icon-eye-open"></i>詳細
+              </a>
+              <a class="btn-small btn-grey">
+                <i class="icon-plus"></i> お気に入り
+              </a>
+              <a class="btn-small btn-color">
+                <i class="icon-pencil"></i> 応募する
+              </a>
+            </footer>
+            <div class="blog-divider"></div>
+            <!--article end-->
+          <% }) %>
+          <!--jobList end-->
+          <!-- Page start-->
+          <div class="pagination-centered">
+            <ul class="pagination">
+              <li class="disabled">
+                <a href="#">«</a>
+              </li>
+              <li class="active">
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+              <li>
+                <a href="#">»</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Page end-->
+        </div>
+
+        <!-- Sidebar End -->
+      </div>
+    </div>
+  </div>
+  <!-- Main Content end-->
+    	<!-- 検索条件 Start -->
+			
+	<!-- 検索条件 End -->
+</div>
