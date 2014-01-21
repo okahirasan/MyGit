@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+
+  });
+  $(function(){
+    $("button").click(function(){
+      $.ajax({
+        type: 'GET',
+        url: '/user/show',
+        dataType: 'json',
+        success: function(json){
+        alert(json);
+        }
+      });
+    })
+  })
+</script>
