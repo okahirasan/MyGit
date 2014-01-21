@@ -1,0 +1,220 @@
+<form action="/job/create" method="POST" id="sign-up-form" class="form-signin">
+	<h2 class="form-signin-heading">Create an account</h2>
+	<div class="control-group">
+	<input type="text" class="form-control" placeholder="your title" name="title" />
+	</div>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="contents" name="contents" />
+  </div>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="conditions" name="conditions" />
+  </div>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="郵便番号" name="zip" />
+  </div>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="住所１" name="adress1" />
+  </div>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="住所２" name="adress2" />
+  </div>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="住所３" name="adress3" />
+  </div>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="startDt" name="startDt" />
+  </div>
+
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="endDt" name="endDt" />
+  </div>
+
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="tags" name="tags" />
+  </div>
+<select style="width:300px" id="source" name="area">
+    
+      <optgroup label="関東">
+      
+      <option value="1">東京</option> 
+      
+      <option value="2">神奈川</option> 
+      
+      <option value="3">千葉</option> 
+      
+      <option value="4">埼玉</option> 
+      
+      <option value="5">茨城</option> 
+      
+      <option value="6">栃木</option> 
+      
+      <option value="7">群馬</option> 
+           
+      </optgroup>
+    
+      <optgroup label="関西">
+      
+      <option value="8">大阪</option> 
+      
+      <option value="9">京都</option> 
+      
+      <option value="10">兵庫</option> 
+      
+      <option value="11">滋賀</option> 
+      
+      <option value="12">奈良</option> 
+      
+      <option value="13">和歌山</option> 
+           
+      </optgroup>
+    
+      <optgroup label="東海">
+      
+      <option value="14">愛知</option> 
+      
+      <option value="15">静岡</option> 
+      
+      <option value="16">岐阜</option> 
+      
+      <option value="17">三重</option> 
+           
+      </optgroup>
+    
+      <optgroup label="北海道・東北">
+      
+      <option value="14">愛知</option> 
+      
+      <option value="15">静岡</option> 
+      
+      <option value="16">岐阜</option> 
+      
+      <option value="17">三重</option> 
+           
+      </optgroup>
+    
+      <optgroup label="九州・沖縄">
+      
+      <option value="25">福岡</option> 
+      
+      <option value="26">熊本</option> 
+      
+      <option value="27">鹿児島</option> 
+      
+      <option value="28">大分</option> 
+      
+      <option value="29">長崎</option> 
+      
+      <option value="30">宮崎</option> 
+      
+      <option value="31">佐賀</option> 
+      
+      <option value="32">沖縄</option> 
+           
+      </optgroup>
+    
+      <optgroup label="中国">
+      
+      <option value="33">広島</option> 
+      
+      <option value="34">岡山</option> 
+      
+      <option value="35">山口</option> 
+      
+      <option value="36">島根</option> 
+      
+      <option value="37">鳥取</option> 
+           
+      </optgroup>
+    
+      <optgroup label="甲信越・北陸">
+      
+      <option value="42">新潟</option> 
+      
+      <option value="43">山梨</option> 
+      
+      <option value="44">長野</option> 
+      
+      <option value="45">富山</option> 
+      
+      <option value="46">石川</option> 
+      
+      <option value="47">福井</option> 
+           
+      </optgroup>
+    
+      <optgroup label="四国">
+      
+      <option value="38">香川</option> 
+      
+      <option value="39">愛媛</option> 
+      
+      <option value="40">高知</option> 
+      
+      <option value="41">徳島</option> 
+           
+      </optgroup>
+    
+    </select>
+    <select style="width:300px" id="sourceGenre" name="genre">
+<option value="52ddc647dd80eb902a032c53">フレンチ</option>
+<option value="52ddc647dd80eb902a032c54">イタリアン</option>
+<option value="52ddc647dd80eb902a032c55">洋食全般</option>
+<option value="52ddc647dd80eb902a032c56">創作・ダイニング</option>
+<option value="52ddc647dd80eb902a032c57">居酒屋</option>
+<option value="52ddc647dd80eb902a032c58">バール・バー</option>
+<option value="52ddc647dd80eb902a032c59">和食全般</option>
+<option value="52ddc647dd80eb902a032c5a">寿司</option>
+<option value="52ddc647dd80eb902a032c5b">日本料理・割烹・懐石</option>
+<option value="52ddc647dd80eb902a032c5c">焼鳥</option>
+<option value="52ddc647dd80eb902a032c5d">焼肉</option>
+<option value="52ddc647dd80eb902a032c5e">うどん・そば・ラーメン</option>
+<option value="52ddc647dd80eb902a032c5f">中華料理</option>
+<option value="52ddc647dd80eb902a032c60">韓国料理</option>
+<option value="52ddc647dd80eb902a032c61">アジア・エスニック</option>
+<option value="52ddc647dd80eb902a032c62">ファストフード・ファミレス</option>
+<option value="52ddc647dd80eb902a032c63">カフェ</option>
+<option value="52ddc647dd80eb902a032c64">串カツ・串揚げ</option>
+<option value="52ddc647dd80eb902a032c65">お好み焼き・たこ焼き</option>
+<option value="52ddc647dd80eb902a032c66">ステーキ・鉄板焼</option>
+<option value="52ddc647dd80eb902a032c67">グランメゾン・リストランテ</option>
+<option value="52ddc647dd80eb902a032c68">ホテル・旅館</option>
+<option value="52ddc647dd80eb902a032c69">ウェディング・ゲストハウス</option>
+<option value="52ddc647dd80eb902a032c6a">パティスリー・製菓</option>
+<option value="52ddc647dd80eb902a032c6b">ブーランジェリー・製パン</option>
+<option value="52ddc647dd80eb902a032c6c">中食（惣菜・宅配など）</option>
+<option value="52ddc647dd80eb902a032c6d">食品・小売・流通</option>
+<option value="52ddc647dd80eb902a032c6e">給食・社員食堂・介護・病院</option>
+    </select>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="company" name="company" />
+  </div>
+
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="comment" name="comment" />
+  </div>
+    <select style="width:300px" id="sourceJobType" name="jobType">
+<option value="52ddc756a457c8401f63914f">ホール・サービススタッフ</option> 
+<option value="52ddc756a457c8401f639150">調理・キッチンスタッフ</option> 
+<option value="52ddc756a457c8401f639151">店長・マネージャー（候補）</option> 
+<option value="52ddc756a457c8401f639152">料理長・シェフ（候補）</option> 
+<option value="52ddc756a457c8401f639153">製菓、パティシエ</option> 
+<option value="52ddc756a457c8401f639154">製パン、ブーランジェ</option> 
+<option value="52ddc756a457c8401f639155">ソムリエ、バーテンダー、バリスタ</option> 
+<option value="52ddc756a457c8401f639156">SV・エリアマネージャー（候補）</option> 
+<option value="52ddc756a457c8401f639157">営業管理職、経営幹部</option> 
+<option value="52ddc756a457c8401f639158">本部職（人事、業態・メニュー開発等）</option> 
+<option value="52ddc756a457c8401f639159">ウェディングプランナー</option> 
+<option value="52ddc756a457c8401f63915a">販売スタッフ</option> 
+<option value="52ddc756a457c8401f63915b">女将・和装ホール</option> 
+<option value="52ddc756a457c8401f63915c">栄養士・管理栄養士</option> 
+<option value="52ddc756a457c8401f63915d">スーパーフロア・小売</option> 
+<option value="52ddc756a457c8401f63915e">生産加工（精肉・鮮魚・青果など）</option> 
+<option value="52ddc756a457c8401f63915f">その他職種</option> 
+    </select>
+  <div class="control-group">
+    <input type="text" class="form-control" placeholder="jobTypeSalary" name="jobTypeSalary" />
+  </div>
+
+
+  <input type="submit" class="btn btn-lg btn-primary btn-block" value="Create Account"/>
+</form>
