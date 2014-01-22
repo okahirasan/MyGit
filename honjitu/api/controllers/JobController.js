@@ -103,7 +103,10 @@ module.exports = {
       });
     });
   },
-
+  AddFavorite: function(req, res, next) {
+    console.log("Addfavorite",req.param('id'))
+    res.redirect('/job/');
+  },
   create: function(req, res, next) {
     var async = require('async');
     var tasks = [];
@@ -133,7 +136,9 @@ module.exports = {
           genreId:req.param('genre'),
           genreName:genreName,
           areaId:req.param('area'),
-          jobType:[{id:"", name:req.param('jobType'),salary:req.param('jobTypeSalary')}]
+          jobType:[{id:"", name:req.param('jobType'),salary:req.param('jobTypeSalary')}],
+          favorite:0,
+          faovoriteToday:[]
       }
        Job.create(jobObj, function jobCreated(err, job) {
         res.redirect('/job/');

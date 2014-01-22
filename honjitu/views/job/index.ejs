@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-          <h2 class="title">募集中の検索結果一覧</h2>
+          <h2 class="title">募集中の検索結果一覧 <%= jobs.length%>件</h2>
         </div>
         <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
           <div class="breadcrumbs pull-right">
@@ -68,14 +68,14 @@ $(function() {
       var jobId = this.id.replace('btn-favorit_', '');
       this.inerText = "tuika";
       //alert(this.innerText);
-      //$.ajax({
-      //  type: 'GET',
-      //  url: '/user/show',
-      //  dataType: 'json',
-      //  success: function(json){
-      //  alert(json);
-      //  }
-      //});
+      $.ajax({
+        type: 'GET',
+        url: '/job/AddFavorite/' + jobId,
+        dataType: 'json',
+        success: function(json){
+        alert(json);
+        }
+      });
     })
   })
 
@@ -233,8 +233,11 @@ $("#selectJobType").select2({ maximumSelectionSize: 10 });
             <!--article end-->
           <% }) %>
           <!--jobList end-->
+          <% if (jobs.length == 0) { %>
+            <%- partial('noMatche')%>
+          <% } %>
           <!-- Page start-->
-          <div class="pagination-centered">
+          <div class="pagination-centered" style="display:none;">
             <ul class="pagination">
               <li class="disabled">
                 <a href="#">«</a>
