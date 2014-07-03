@@ -1,0 +1,33 @@
+commonJsonからのデータ取得
+    
+クラス：　common = require('../common/common');
+メソッド：GetData_CommonJson
+sample
+common.GetData_CommonJson(ﾀｲﾌﾟ名,ID,name)
+
+ejs for文
+						<% _.each(lady.tags, function(dataAA) { %>
+						alert("<%= dataAA.name %>")
+						<% }) %>
+ifぶん
+
+		validateしたいとき
+		<script src="/js/jquery.validate.min.js"></script>　これを忘れるな
+		<script type="text/javascript" src="/js/customLadyProfValidate.js"></script>
+		
+パーティある
+<%- partial('./shared/infobox')%>
+
+
+フォーム送信：data をシリアライズすること。
+  processData: false,
+	contentType: false,
+↑もわすれずに
+
+$.ajax({
+	type: 'GET',
+	url: '/Lady/Create/',
+	data: $("#validation-form").serialize(),
+  processData: false,
+	contentType: false,
+	success: function(json){
