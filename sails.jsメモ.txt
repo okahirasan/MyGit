@@ -1,0 +1,17 @@
+    copy: {
+      dev: {
+        files: [
+          {
+          expand: true,
+          cwd: './assets',
+          src: ['**/*.!(coffee)'],
+          dest: '.tmp/public'
+        }, {
+          expand: true,
+          cwd: './upd_image',
+          src: ['**/*.!(coffee)'],
+          dest: '.tmp/public/images'
+        },
+        
+        ]
+      },
