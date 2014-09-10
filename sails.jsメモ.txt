@@ -1,3 +1,7 @@
+sails起動時
+アップロードファイルを.tmpフォルダに移動させる
+gruntfile.jsに追加
+copy処理内のfilesの箇所に追加する
     copy: {
       dev: {
         files: [
