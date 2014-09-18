@@ -1,0 +1,96 @@
+<div id="user-profile-3" class="user-profile row">
+	<form action="/Lady/ladyProfUpdate" method="POST" class="form-horizontal" id="ladyProf">
+	<div class="col-sm-offset-1 col-sm-10">
+		<!-- well -->	
+		<div class="well well-sm">
+			<input type="hidden" name="hiddenCurrent" value="<%= lady.currentTab%>" id="hidTab" />
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			&nbsp;
+			<div class="inline middle blue bigger-110"> プロフィール 0% 完成しています </div>
+				&nbsp; &nbsp; &nbsp;
+			<div style="width:200px;" data-percent="0%" class="inline middle no-margin progress progress-striped active">
+				<div class="progress-bar progress-bar-success" style="width:0%"></div>
+			</div>
+		</div>
+		<!-- /well -->	
+		<div class="space"></div>
+			<!-- tab -->
+			<div class="tabbable">
+				<ul class="nav nav-tabs padding-16" id="ul-tab-prof">
+					<li id="li-tab-basic">
+						<a data-toggle="tab" href="#edit-basic" class="tab-prof" id="tab-basic">
+						<i class="green icon-edit bigger-125"></i>
+						基本情報
+						</a>
+					</li>
+					<li id="li-tab-detail">
+						<a data-toggle="tab" href="#edit-detail" class="tab-prof" id="tab-detail">
+						<i class="orange icon-female bigger-125"></i>
+						詳細情報
+						</a>
+					</li>
+          <li id="li-tab-image">
+						<a data-toggle="tab" href="#edit-image" class="tab-prof" id="tab-image">
+						<i class="red icon-picture bigger-125"></i>
+						画像情報
+						</a>
+					</li>
+          <li id="li-tab-QA">
+						<a data-toggle="tab" href="#edit-QA" class="tab-prof" id="tab-QA">
+						<i class="blue icon-question bigger-125"></i>
+						Q adn A
+						</a>
+					</li>
+					<li id="li-tab-settings">
+						<a data-toggle="tab" href="#edit-settings" class="tab-prof" id="tab-settings">
+						<i class="purple icon-cog bigger-125"></i>
+						各種設定
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content profile-edit-tab-content">
+				<!-- tab1 basic -->
+				<%- partial('./editBasicLady')%>
+				<!-- /tab1 basic -->
+				<!-- tab1 basic -->
+				<%- partial('./editDetailLady')%>
+				<!-- /tab1 basic -->
+				<!-- tab1 basic -->
+				<%- partial('./editImage2Lady')%>
+				<!-- /tab1 basic -->
+        <!-- tab1 settings -->
+				<%- partial('./editQALady')%>
+				<!-- /tab1 settings -->
+        <!-- tab1 settings -->
+				<%- partial('./editSettingsLady')%>
+				<!-- tab1 settings -->
+				</div>
+			
+	</div>
+			
+	<div class="clearfix form-actions">
+		<div class="col-md-offset-3 col-md-9">
+			<button class="btn btn-info" type="submit" id="btnSave_prof">
+				<i class="icon-ok bigger-110"></i>
+				Save
+			</button>
+			&nbsp; &nbsp;
+			<button class="btn" type="reset">
+				<i class="icon-undo bigger-110"></i>
+				Reset
+			</button>
+		</div>
+	</div>
+	<input type="hidden" name="hiddenLadyID" value="<%= lady.id%>">
+	
+	<input type="hidden" id="hiddenLooks" name="hiddenLooks">
+
+	<input type="hidden" id="hiddenTags" name="hiddenTags">
+	<input type="hidden" id="stockName" name="hidstockName">
+	<input type="hidden" id="positionName" name="hidpositionName">
+	<input type="hidden" id="lineName" name="hidlineName">
+	<input type="hidden" id="stationName" name="hidstationName">
+  <input type="hidden" id="pricePlan" name="hidpricePlan">
+	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+	</form>
+</div>

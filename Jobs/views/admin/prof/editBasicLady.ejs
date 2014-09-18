@@ -1,0 +1,164 @@
+<div id="edit-basic" class="tab-pane">
+	<!-- general -->	
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<h4 class="header blue bolder smaller">基本情報</h4>
+			<% if(flash && flash.err) { %>
+    <div class="alert alert-danger">
+								<button type="button" class="close" data-dismiss="alert">
+						<i class="icon-remove"></i>
+					</button>
+    <i class="fa fa-frown-o"></i> 
+    <% Object.keys(flash.err).forEach(function(error) { %>
+        <strong><%-flash.err[error].name %></strong>：<%-flash.err[error].message %>
+    <% }) %>
+    </div>
+		<% } %>
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="name">ユーザー名</label>				
+				<div class="col-sm-8">
+					<div class="clearfix">
+						<input class="col-xs-12 col-sm-8" type="text" name="name" id="name" placeholder="Username" value="<%= lady.name%>" />
+					</div>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="email">メールアドレス</label>
+				<div class="col-sm-8">
+          <% if(lady.email != undefined){%>
+          <div class="clearfix">
+						<input class="col-xs-12 col-sm-10" type="email" id="email" name="email" value="<%= lady.email%>" />
+					</div>
+					<% } else {%>
+          <div class="clearfix">
+						<input class="col-xs-12 col-sm-10" type="email" id="email" name="email" />
+					</div>
+					<% } %>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="phone" name ="age" data-rel="tooltip" title="ｻｲﾄでは公開されません" data-placement="bottom">電話番号</label>
+				<div class="col-sm-8">
+					<span class="input-icon input-icon-right">
+					<input class="input-medium input-mask-phone" type="text" id="phone" name="phone" value="123-1234-2344"　/>
+					<i class="icon-phone icon-flip-horizontal"></i>
+				</div>
+			</div>
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="password">ログインパスワード</label>
+				<div class="col-sm-8">
+          <% if(lady.password != undefined){%>
+          <div class="clearfix">
+						<input class="col-xs-12 col-sm-10" type="text" id="password" name="password" value="<%= lady.password%>" />
+					</div>
+					<% } else {%>
+          <div class="clearfix">
+						<input class="col-xs-12 col-sm-10" type="text" id="password" name="password" />
+					</div>
+					<% } %>
+          <div class="clearfix">
+					</div>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="birthDay" >誕生日</label>
+					<div class="col-sm-8">
+						<div class="input-medium">
+							<div class="input-group">
+								<input class="input-medium date-picker" id="birthDay" name="birthDay" type="text" data-date-format="yyyy年mm月dd日" placeholder="yyyy年mm月dd日" value="<%= lady.birthDay%>" />
+								<span class="input-group-addon">
+									<i class="icon-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+			</div>
+      <div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="spinner1">ｻｲﾄ内表示　年齢</label>
+				<div class="col-sm-8">
+					<input type="text" class="input-mini" id="spinner1" value="<%= lady.age.value%>" name ="age" data-rel="tooltip" title="誕生日と一致する必要はありません" data-placement="bottom"/>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="enterDay" >入店日</label>
+					<div class="col-sm-8">
+						<div class="input-medium">
+							<div class="input-group">
+								<input class="input-medium date-picker" id="enterDay" name="enterDay" type="text" data-date-format="yyyy年mm月dd日" placeholder="yyyy年mm月dd日" value="<%= lady.enterDay%>"/>
+								<span class="input-group-addon">
+									<i class="icon-calendar"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+			</div>
+      <div class="space-4"></div>
+			
+			<h4 class="header blue bolder smaller">Body 情報</h4>
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="spinner1">身長</label>
+				<div class="col-sm-8">
+					<input type="text" class="input-mini" id="spinner2" name ="height"/>
+				</div>
+			</div>
+			<div class="space-4"></div>
+      
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="bust">バスト</label>
+				<div class="col-sm-8">
+					<input type="text" class="input-mini" id="spinner3" name ="bust"/>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="bustCup">カップ数</label>
+				<div class="col-sm-8">
+					<select class="form-control" id="bustCup" name="bustCup" style="width:100px">
+							<option value="A">Aカップ</option>
+							<option value="B">Bカップ</option>
+							<option value="C">Cカップ</option>
+							<option value="D">Dカップ</option>
+							<option value="E">Eカップ</option>
+							<option value="F">Fカップ</option>
+							<option value="G">Gカップ</option>
+							<option value="H">Hカップ</option>
+							<option value="I">Iカップ</option>
+							<option value="J">Jカップ</option>
+							<option value="K">Kカップ</option>
+							<option value="L">Lカップ</option>
+					</select>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="waist">ウェスト</label>
+				<div class="col-sm-8">
+					<input type="text" class="input-mini" id="spinner4" name ="waist"/>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="hip">ヒップ</label>
+				<div class="col-sm-8">
+					<input type="text" class="input-mini" id="spinner5" name ="hip"/>
+				</div>
+			</div>
+			<div class="space-4"></div>
+	</div>
+	</div><!-- /row -->
+</div>

@@ -1,0 +1,68 @@
+<div class="widget-body">
+    <div class="widget-main">
+        <h4 class="header green lighter bigger">
+        <i class="icon-group blue"></i>
+        新規　ユーザー登録
+        </h4>
+        <div class="space-6"></div>
+        <p> 下記の情報を入力ください: </p> 
+        <form action="/admin/create" method="POST" class="sign-up">
+            <fieldset>
+                <label class="block clearfix">
+                    <span class="block input-icon input-icon-right">
+                    <input type="text" class="form-control" placeholder="ユーザー名" name="name"/>
+                    <i class="icon-user"></i>
+                    </span>
+                </label>
+                                
+                <label class="block clearfix">
+                    <span class="block input-icon input-icon-right">
+                    <input type="email" class="form-control" placeholder="メールアドレス" name="email" />
+                    <i class="icon-envelope"></i>
+                    </span>
+                </label>
+                         
+                <label class="block clearfix">
+                    <span class="block input-icon input-icon-right">
+                    <input type="password" class="form-control" placeholder="パスワード" name="password" id="password"/>
+                    <i class="icon-lock"></i>
+                    </span>
+                </label>
+                
+                <label class="block clearfix">
+                    <span class="block input-icon input-icon-right">
+                    <input type="password" class="form-control" placeholder="パスワードをもう一度" name="confirmation"/>
+                    <i class="icon-retweet"></i>
+                    </span>
+                </label>
+                
+                <label class="block">
+                    <input type="checkbox" class="ace" name="chkAccept" />
+                    <span class="lbl">
+                    私はサイト内の
+                    <a href="#">ご利用規約</a>
+                    に同意します
+                    </span>
+                </label>
+                
+                <div class="space-24"></div>
+            
+                <div class="clearfix">
+                    <button type="reset" class="width-30 pull-left btn btn-sm">
+                    <i class="icon-refresh"></i>
+                    リセット
+                    </button>
+                    <input type="submit" value="登録" class="width-65 pull-right btn btn-sm btn-success">
+
+                </div>
+                <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+            </fieldset>
+        </form>
+    </div>    
+    <div class="toolbar center">
+        <a href="#" onclick="show_box('signin-box'); return false;" class="back-to-login-link">
+            <i class="icon-arrow-left"></i>
+            戻る
+        </a>
+    </div>
+</div><!-- /widget-body -->

@@ -1,0 +1,99 @@
+<!-- Box Wrapper -->
+<div class="inner-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<!-- Inner Page Content Sidebar -->
+				<div class="page-sidebar">
+					<!-- Page Title -->
+					<div class="page-title br-red">
+						<!-- Inner Page Title // Heading -->
+						<h2>検索結果</h2>
+						<!-- Paragraph -->
+						<p><%= ladysTotal%>件</p>
+					</div>
+					<!-- Sidebar Links -->
+					<div class="sidebar-link col-disable">
+						<!-- Search Box -->
+						<div class="search">
+							<form>
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Text to search">
+									<span class="input-group-btn">
+										<button class="btn" type="button"><i class="fa fa-search"></i></button>
+									</span>
+								</div>
+							</form>
+						</div>
+						<ul class="list-unstyled">
+							<li><a href="index.html" class="animated">Home <i class="fa fa-angle-double-right"></i></a></li>
+							<li><a href="aboutus.html" class="animated">About Us <i class="fa fa-angle-double-right"></i></a></li>
+							<li><a href="feature.html" class="animated">Features <i class="fa fa-angle-double-right"></i></a></li>
+							<li><a href="coming-soon.html" class="animated">Coming Soon <i class="fa fa-angle-double-right"></i></a></li>
+							<li><a href="service.html" class="animated">Services <i class="fa fa-angle-double-right"></i></a></li>
+							<li><a href="blog.html" class="animated">Blog <i class="fa fa-angle-double-right"></i></a></li>
+							<li><a href="contact.html" class="animated">Contact Us <i class="fa fa-angle-double-right"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Main-bar Column -->
+			<div class="col-md-9">
+				<div class="page-mainbar portfolio">
+					<!-- Heading -->
+					<h3>Portfolio Segment</h3>
+					
+					<!-- Portfolio Content -->
+					<div class="portfolio-content">
+						
+						<div class="img-portfolio">
+							
+							<p>
+								<!-- Add filter names inside "data-filter". For example ".web-design", ".seo", etc., Filter names are used to filter the below images. -->
+								<ul id="filters">
+									<li><a href="#" data-filter="*" class="btn btn-default">All</a></li>
+									<li><a href="#" data-filter=".one" class="btn btn-danger">One</a></li>
+									<li><a href="#" data-filter=".two" class="btn btn-info">Two</a></li>
+									<li><a href="#" data-filter=".three" class="btn btn-success">Three</a></li>
+									<li><a href="#" data-filter=".four" class="btn btn-warning">Four</a></li>
+									<li><a href="#" data-filter=".five" class="btn btn-primary">Five</a></li>
+								</ul>
+							</p>
+						
+							<div id="portfolio">
+                <% cnt = 0 %>
+								<% _.each(ladys, function(lady) { %>
+								<div class="element one three">
+									<a href="/images/Lady/<%= lady.ladyID%>/1.jpg" class="prettyphoto">
+										<img src="/images/Lady/<%= lady.ladyID%>/1.jpg" alt=""/>
+										<!-- Portfolio caption -->
+										<div class="pcap color<%= cnt %>">
+											<h4><%= lady.name.substring(0,10)%>[<%= lady.age%>歳]</h4>
+											<p>T <%= lady.height%> -B <%= lady.bust%>(<%= lady.bustCup%>) -W <%= lady.waist%> -H <%= lady.hip%>
+											<br/><%= lady.shop.name%>
+											<br/><%= lady.shop.shopTypeName%> / <%= lady.adressSpot%>
+											</p>
+										</div>
+									</a>
+								</div>
+                <% cnt++; %>
+						    <% if(cnt == 6) {cnt = 0}%>
+
+								<% }) %>
+							</div>
+																		<!-- Pagination -->
+											<div class="paging">
+												<span class='current'>1</span>
+												<a href='#' class="btnPage" >2</a>
+												<span class="dots">&hellip;</span>
+												<a href='#'>6</a>
+												<a href="#">Next</a>
+											</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer Start -->

@@ -1,0 +1,85 @@
+<!-- WRAPPER -->
+<div id="wrapper">
+    <div id="shop">
+        <!-- PAGE TITLE -->
+        <header id="page-title">
+        <div class="container">
+            <h1>ログイン</h1>
+            <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">ログイン</li>
+            </ul>
+        </div>
+        </header>
+        <section class="container">
+            <div class="row">
+                <!-- LogIN -->
+                <div class="col-md-6">
+                    <h2>ログイン</h2>
+                        <form class="white-row" method="post" action="/user/signin" >
+							<%- partial('../shared/flashError')%>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label>E-mail Address</label>
+                                        <input type="text" value="" class="form-control" name="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label>Password</label>
+                                        <input type="password" value="" class="form-control" name="password" id="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span class="remember-box checkbox">
+                                        <label for="rememberme">
+                                            <input type="checkbox" id="rememberme" name="rememberme">Remember Me
+                                        </label>
+                                    </span>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                                    <input type="submit" value="ログイン" class="btn btn-primary pull-right" data-loading-text="Loading...">
+                                </div>
+                            </div>
+                    </form>
+                </div>
+                <!-- /LogIN -->
+		
+		<!-- PASSWORD -->
+		<div class="col-md-6">
+		
+		<h2>パスワード <strong>忘れた方</strong>?</h2>
+		
+		<div class="white-row">
+		
+		<p>
+		下記のメールアドレスに仮のパスワードを発行いたします。
+		</p>
+		
+		<!-- password form -->
+		<label>E-mail Address</label>
+		<form class="input-group" method="post" action="#">
+		<input type="text" class="form-control" name="s" id="s" value="" placeholder="E-mail Address" />
+		<span class="input-group-btn">
+		<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+		<input type="submit" value="送信" class="btn btn-primary pull-right" data-loading-text="Loading...">
+		</span>
+		</form>
+		
+		</div>
+		
+		</div>
+		<!-- /PASSWORD -->
+
+
+            </div>
+        </section>
+    </div>
+</div>
+<!-- /WRAPPER -->

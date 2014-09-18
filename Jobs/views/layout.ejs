@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="転職,求人,転職サイト,求人情報,飲食,飲食業界" />
+    <meta name="description" content="飲食業界への転職を考える方のための転職・求人情報サイト" />
+    <title><%- title %></title>
+    <!-- Viewport mobile tag for sensible mobile support -->
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="/styles/font-awesome.css" rel="stylesheet" type="text/css" />
+		<link href="/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+		<link href="/plugins/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css" />
+		<link href="/plugins/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css" />
+		<link href="/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+		<link href="/styles/animate.css" rel="stylesheet" type="text/css" />
+		<link href="/styles/superslides.css" rel="stylesheet" type="text/css" />
+        
+    <!-- THEME CSS -->
+		<link href="/styles/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="/styles/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/styles/layout-responsive.css" rel="stylesheet" type="text/css" />
+		<link href="/styles/color_scheme/yellow.css" rel="stylesheet" type="text/css" />
+  	<link href="/styles/realestate.css" rel="stylesheet" type="text/css" />
+
+		<!-- <link id="css_dark_skin" href="/styles/layout-dark.css" rel="stylesheet" type="text/css" /><!-- DARK SKIN -->
+    <!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
+		<link href="/plugins/styleswitcher/styleswitcher.css" rel="stylesheet" type="text/css" />		
+  	<link href="/styles/select2.css" rel="stylesheet" type="text/css" />
+
+		<!-- Morenizr -->
+		<script type="text/javascript" src="/plugins/modernizr.min.js"></script>
+
+  </head>
+  <body>
+    <!-- Include the view file for the current controller/route -->
+    <%- partial('shared/header/top')%>
+    <%- partial('shared/header/topNav')%>
+    <%- body %>
+    <%- partial('shared/footer')%>
+    <!--
+      Client-side Javascript
+      ========================
+      You can import any js files in your `assets` directory as you would 
+      normally: using <script></script> tags.
+      Here's an example of importing a few dependencies, in order:
+    -->
+    <!-- Bring in the socket.io client -->
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <!-- then beef it up with some convenience logic for talking to Sails.js -->
+    <script type="text/javascript" src="/js/sails.io.js"></script>
+    <!-- listen on socket.io for incoming messages -->
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <!-- JAVASCRIPT FILES -->
+    <script type="text/javascript" src="/plugins/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/customValidate.js"></script>
+    <script type="text/javascript" src="/plugins/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/plugins/jquery.appear.js"></script>
+    <script type="text/javascript" src="/plugins/jquery.isotope.js"></script>
+    <script type="text/javascript" src="/plugins/masonry.js"></script>
+    <script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/plugins/stellar/jquery.stellar.min.js"></script>
+    <script type="text/javascript" src="/plugins/knob/js/jquery.knob.js"></script>
+    <script type="text/javascript" src="/plugins/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="/plugins/superslides/dist/jquery.superslides.min.js"></script>
+    <script type="text/javascript" src="/plugins/styleswitcher/styleswitcher.js"></script><!-- STYLESWITCHER - REMOVE ON PRODUCTION/DEVELOPMENT -->
+    <script type="text/javascript" src="/js/select2.js"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script>
+      function show_section(id) {
+        jQuery('.section-visible').addClass('section');
+        jQuery('.section-visible').removeClass('section-visible');
+        jQuery('#'+id).addClass('section-visible');
+        
+        if (id == "prof-section") {
+          $(".myPageTitle").text("プロフィール");
+        }else if (id == "favorite-section") {
+          $(".myPageTitle").text("お気に入り");
+        }
+      }
+		</script>
+  </body>
+</html>

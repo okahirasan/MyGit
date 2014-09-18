@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %></title>
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link href="/plugins/ace/styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/plugins/ace/styles/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/plugins/ace/styles/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+			<link rel="stylesheet" href="/plugins/ace/styles/fullcalendar.css" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-skins.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="/plugins/ace/styles/ace-ie.min.css" />
+    <![endif]-->
+    <script src="/plugins/ace/js/ace-extra.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/plugins/ace/js/html5shiv.js"></script>
+    <script src="/plugins/ace/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+      window.overlord = { csrf: "<%= _csrf %>" };
+    </script>
+  </head>
+
+    <body>
+      <div class="navbar" id="navbar">
+      <script type="text/javascript">
+        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+      </script>
+        <%- partial('../shared/topNavi')%>
+      </div>
+      <div class="main-container container-fluid">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+          <span class="menu-text"></span>
+        </a>
+        <%- partial('../shared/sideNavi')%>
+        <%- body %>
+        <!-- /.main-content -->
+      </div><!-- /.main-container -->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+      <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+
+    <!-- Bring in the socket.io client -->
+    <script src="/js/socket.io.js"></script>
+    <script src="/js/sails.io.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/customValidate.js"></script>
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+            window.jQuery || document.write("<script src='/plugins/ace/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='/plugins/ace/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+            if("ontouchend" in document) document.write("<script src='/plugins/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="/plugins/ace/js/bootstrap.min.js"></script>
+    <script src="/plugins/ace/js/typeahead-bs2.min.js"></script>
+    <!-- page specific plugin scripts -->
+		<script src="/plugins/ace/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="/plugins/ace//js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/plugins/ace/js/fullcalendar.min.js"></script>
+		<script src="/plugins/ace/js/bootbox.min.js"></script>
+	  <script src="/plugins/ace/js/ace-elements.min.js"></script>
+    <script src="/plugins/ace/js/ace.min.js"></script>
+
+		<script type="text/javascript">
+			jQuery(function($) {
+        //skin設定
+        var body = $(document.body);
+        body.addClass('skin-2');
+				
+				$('#external-events div.external-event').each(function() {
+		
+				// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+				// it doesn't need to have a start or end
+				var eventObject = {
+					title: $.trim($(this).text()) // use the element's text as the event title
+				};
+				// store the Event Object in the DOM element so we can get to it later
+				$(this).data('eventObject', eventObject);
+		
+				// make the event draggable using jQuery UI
+				$(this).draggable({
+					zIndex: 999,
+					revert: true,      // will cause the event to go back to its
+					revertDuration: 0  //  original position after the drag
+				});
+			});
+
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
+
+	
+			var calendar = $('#calendar').fullCalendar({
+				 buttonText: {
+					prev: '<i class="icon-chevron-left"></i>',
+					next: '<i class="icon-chevron-right"></i>',
+					today:    '今日',
+            month:    '月',
+            week:     '週',
+            day:      '日'
+				},
+				// 列の書式
+        columnFormat: {
+            month: 'ddd',    // 月
+            week: "d'('ddd')'", // 7(月)
+            day: "d'('ddd')'" // 7(月)
+        },
+				// タイトルの書式
+        titleFormat: {
+            month: 'yyyy年M月',                             // 2013年9月
+            week: "yyyy年M月d日{ ～ }{[yyyy年]}{[M月]d日}", // 2013年9月7日 ～ 13日
+            day: "yyyy年M月d日'('ddd')'"                  // 2013年9月7日(火)
+        },
+				
+        // 終日スロットのタイトル
+        allDayText: '終日',
+        // スロットの時間の書式
+        axisFormat: 'H(:mm)',
+				// 時間の書式
+        timeFormat: 'H:mm',
+        // 月名称
+        monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        // 月略称
+        monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        // 曜日名称
+        dayNames: ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
+        // 曜日略称
+        dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+				minTime: 0,
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				events: {
+							 url: '/Event/GetWorkEvents/' + '<%= session.Admin.shops[0].id %>',
+							 cache: false
+					 }
+				,
+				// スロットの分
+        slotMinutes: 30,
+				defaultEventMinutes: 360,
+				editable: true,
+				// 移動
+				eventDrop: function(event, delta, revertFunc) {
+				var today = new Date();
+				if(event.start < today)
+				{
+          location.reload();
+				}else{
+					$.ajax
+					({
+							url: '/Event/UpWorkEvents/' + event.id + "/" + event.title + "/" + event.start + "/" + event.end + "/" + event['className'],
+							type: 'Get',
+							success: function (response)
+							{
+							},
+							error: function (response)
+							{
+								alert("error");
+							}
+					});
+				}
+
+				},
+				//　時間変更
+				 eventResize: function(event, delta, revertFunc) {
+					$.ajax
+						({
+								url: '/Event/UpWorkEvents/' + event.id + "/" + event.title + "/" + event.start + "/" + event.end + "/" + event['className'],
+								type: 'Get',
+								success: function (response)
+								{
+								},
+								error: function (response)
+								{
+									alert("error");
+								}
+						});
+					},
+				droppable: true, // this allows things to be dropped onto the calendar !!!
+				//新規登録
+				drop: function(date, allDay) { // this function is called when something is dropped
+					
+					var originalEventObject = $(this).data('eventObject');
+					var $extraEventClass = $(this).attr('data-class');
+					var duration = 60;
+					// we need to copy it, so that multiple events don't have a reference to the same object
+					var copyObj = $.extend({}, originalEventObject);
+					//copyObj.id = response;
+					// assign it the date that was reported
+					copyObj.start = date;
+					var today = new Date();
+					if(copyObj.start < today)
+					{
+						var today1 = SetDateFormat(today);
+						var setDate1 = SetDateFormat(date);
+						if (today1 == setDate1) {
+							var setDate2 = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours() + 1, 0,0);
+							copyObj.start = setDate2;
+							date = setDate2;
+						}else {
+							  $("#calendar").before("<div class='alert alert-danger'>本日より過去に設定することはできません。</div>");
+								$(".alert").fadeOut(5000);
+              return;
+						}
+					}
+					copyObj.allDay = false;
+					copyObj.color = $(this).attr('data-color');
+
+					copyObj.end = new Date(date.getTime() + duration * 60000 * 6);
+					if($extraEventClass) copyObj['className'] = [$extraEventClass];
+					// render the event on the calendar
+					// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+					$('#calendar').fullCalendar('renderEvent', copyObj, true);
+					
+					// is the "remove after drop" checkbox checked?
+					if ($('#drop-remove').is(':checked')) {
+						// if so, remove the element from the "Draggable Events" list
+						$(this).remove();
+					}
+					$.ajax
+						({
+								url: '/Event/SetWorkEvents/' + $(this).attr('id') + "/" + copyObj.title + "/" + copyObj.start + "/" + copyObj.end + "/" + $(this).attr('data-color').replace("#",""),
+								type: 'Get',
+								success: function (response)
+								{
+                   copyObj.id = response;
+								},
+								error: function (response)
+								{
+									alert("error");
+								}
+						});
+				}
+				,
+				selectable: false,
+				selectHelper: true,
+				select: function(start, end, allDay) {
+					
+					bootbox.prompt("New Event Title:", function(title) {
+						if (title !== null) {
+							calendar.fullCalendar('renderEvent',
+								{
+									title: title,
+									start: start,
+									end: end,
+									allDay: allDay
+								},
+								true // make the event "stick"
+							);
+						}
+					});
+					
+		
+					calendar.fullCalendar('unselect');
+					
+				}
+				,
+				eventClick: function(calEvent, jsEvent, view) {
+		
+					var form = $("<form class='form-inline'><label>女の子メモ &nbsp;</label></form>");
+					form.append("<input class='middle' autocomplete=off type=text value='" + calEvent.title + "' /> ");
+					//form.append("<input class='middle' autocomplete=off type=text value='" + calEvent.start + "' / id='txtStart' > ");
+					form.append("<button type='submit' class='btn btn-sm btn-success'><i class='icon-ok'></i> Save</button>");
+					
+					var div = bootbox.dialog({
+						message: form,
+					
+						buttons: {
+							"delete" : {
+								"label" : "<i class='icon-trash'></i> 取り消し",
+								"className" : "btn-sm btn-danger",
+								"callback": function() {
+									calendar.fullCalendar('removeEvents' , function(ev){
+										$.ajax
+										({
+												url: '/evnet/DelWorkEvents/' + calEvent._id,
+												type: 'Get',
+												success: function (response)
+												{
+												},
+												error: function (response)
+												{
+												}
+										});
+
+										return (ev._id == calEvent._id);
+									})
+								}
+							} ,
+							"close" : {
+								"label" : "<i class='icon-remove'></i> Close",
+								"className" : "btn-sm"
+							} 
+						}
+		
+					});
+					
+					form.on('submit', function(){
+						calEvent.title = form.find("input[type=text]").val();
+						//calEvent.start = $("#txtStart").val();;
+						alert(calEvent.start);
+						alert($(this).attr('id'));
+						calendar.fullCalendar('updateEvent', calEvent);
+						div.modal("hide");
+						return false;
+					});
+					
+		
+				}
+				
+			});
+
+	});
+		function SetDateFormat(date) {
+			var year = date.getFullYear();  
+			var month = date.getMonth() + 1;  
+			var day = date.getDate();  
+				
+			if ( month < 10 ) {  
+			　　month = '0' + month;  
+			}  
+			if ( day < 10 ) {  
+			　　day = '0' + day;  
+			}  
+				
+			var str = year + '/' + month + '/' + day;
+			return str;
+		}
+		</script>
+
+
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!-- WRAPPER -->
+<div id="wrapper">
+    <!-- PAGE TITLE -->
+    <header id="page-title">
+        <div class="container">
+					<h1><%= user.name %>さんのプロフィール</h1>
+					<ul class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li class="active">プロフィール</li>
+					</ul>
+        </div>
+    </header>
+    <!-- /PAGE TITLE -->
+		<section class="container">
+				<div class="row">
+					<%- partial('mypage/profNavi')%>
+					<div class="col-md-9">
+						<div class="tabs nomargin-top">
+							<!-- tabs -->
+							<ul class="nav nav-tabs">
+								<li id="tab1List" class="active">
+									<a href="#tab1" data-toggle="tab">
+										<i class="fa fa-heart"></i>基本情報
+									</a>
+								</li>
+								<li id="tab2List" class="">
+									<a href="#tab2" data-toggle="tab">
+										<i class="fa fa-cogs"></i> 希望条件
+									</a>
+								</li>
+							</ul>
+							<!-- tabs content -->
+							<div class="tab-content">
+								<div id="tab1" class="tab-pane active">
+								<!-- WHITE ROWS -->
+								<%- partial('mypage/profForm')%>
+								<!-- /WHITE ROWS -->
+								</div>
+								<div id="tab2" class="tab-pane">
+                <%- partial('mypage/profForm2')%>
+								</div>
+							</div>
+							<!-- /tabs content -->
+						</div>
+					</div>
+				</div>
+		</section>
+</div>
+<!-- /WRAPPER -->

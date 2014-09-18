@@ -1,0 +1,37 @@
+<form action="/user/update/<%= user.id %>/job" method="POST">
+	<div class="white-row">
+		<div class="profile-user-info profile-user-info-striped">
+			<div class="profile-info-row">
+				<div class="profile-info-name"> 雇用タイプ </div>
+				<div class="profile-info-value">
+						<select id="employMentType" name="employMentType" multiple style="width:300px;" class="populate">
+						</select>
+				</div>
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> 希望の職種 </div>
+				<div class="profile-info-value">
+						<select id="jobType" name="jobType" multiple style="width:300px;" class="populate">
+						</select>
+				</div>
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> 現在の給与 </div>
+				<div class="profile-info-value">
+					<select class="form-control" id="salary_now" name="salary_now" style="width:200px">
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"></div>
+			<div class="profile-info-value">
+				 <button type="submit" class="btn btn-primary btn-xs" id="btnSave_prof2">登録</button>
+				 <a href="/user/show/<%= user.id %>/job"><button type="button" class="btn btn-primary btn-xs">戻る</button></a>
+			</div>
+			<input type="hidden" id="hidemployMentType" name="hidemployMentType">
+			<input type="hidden" id="hidjobType" name="hidjobType">
+			<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+		</div>
+  </div>
+</form>

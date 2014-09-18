@@ -1,0 +1,90 @@
+<div id="edit-detail" class="tab-pane">
+	<!-- general -->	
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<h4 class="header blue bolder smaller">詳細情報</h4>
+			
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="nameTitle">キャッチフレーズ</label>				
+				<div class="col-sm-8">
+          <div class="clearfix">
+						<% if(lady.nameTitle != undefined){%>
+						<input class="col-xs-12 col-sm-8" type="text" name="nameTitle" id="nameTitle" placeholder="キャッチフレーズ" value="<%= lady.nameTitle%>" />
+						<% } else {%>
+						<input class="col-xs-12 col-sm-8" type="text" name="nameTitle" id="nameTitle" placeholder="キャッチフレーズ" />
+						<% } %>
+          </div>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="name">容姿タイプ</label>				
+				<div class="col-sm-8">
+					<select id="drpLooks" name="looks" style="width:220px;" class="populate">
+					</select>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="name">体系タイプ</label>				
+				<div class="col-sm-8">
+					<select id="drpBodyType" name="bodyType" style="width:220px;" class="populate">
+					</select>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="name">おっぱいタイプ</label>				
+				<div class="col-sm-8">
+					<select id="drpBustType" name="bustType" style="width:220px;" class="populate">
+					</select>
+				</div>
+			</div>
+			<div class="space-4"></div>
+
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="name">SM</label>				
+				<div class="col-sm-8">
+					<select id="drpSmType" name="smType" style="width:220px;" class="populate">
+					</select>
+				</div>
+			</div>
+			<div class="space-4"></div>
+
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="tags1" data-rel="tooltip" title="複数選択可能です。" data-placement="bottom">セールスポイント</label>				
+				<div class="col-sm-8">
+					<select id="drpTags" name="tags1" multiple style="width:220px;" class="populate">
+					</select>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="form-field-tags">セールスポイント追加</label>
+				<div class="col-sm-8">
+            <input type="text" name="tags2" id="form-field-tags" value="<%= customTags%>" placeholder="複数入力可能です" />
+				</div>
+			</div>
+      <div class="space-4"></div>
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="freeComment0">女の子:コメント</label>
+				<div class="col-sm-8">
+					<textarea id="freeComment0" name="freeComment0" style="width:300px;height:100px;"><%= lady.freeComment[0].text%></textarea>
+				</div>
+			</div>
+			<div class="space-4"></div>
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="freeComment1">店長:コメント</label>
+				<div class="col-sm-8">
+					<textarea id="freeComment1" name="freeComment1" style="width:300px;height:100px;"><%= lady.freeComment[1].text%></textarea>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+		</div>
+	</div><!-- /row -->
+</div>

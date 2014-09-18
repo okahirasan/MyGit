@@ -1,0 +1,22 @@
+<header id="topHead" class="color">
+    <div class="container">
+        <i class="fa fa-phone"></i> 1800-555-1234 &bull; 
+        <a href="mailto:mail@yourdomain.com">mail@yourdomain.com</a>
+        <div class="pull-right socials">
+            <a href="#" class="pull-left social fa fa-facebook"></a>
+            <a href="#" class="pull-left social fa fa-twitter"></a>
+            <a href="#" class="pull-left social fa fa-google-plus"></a>
+        </div>
+        <div class="pull-right nav">
+            <% if(session.login) { %>
+                <a href="/user/show/<%= session.User.id%>"><button type="button" class="btn btn-primary btn-xs">マイページ</button></a>
+                <a href="/user/logout/<%= session.User.id%>"><button type="button" class="btn btn-primary btn-xs">ログアウト</button></a>
+            <% } else { %>
+                <a href="/user/new/"><button type="button" class="btn btn-primary btn-xs">会員登録</button></a>
+                <a href="/user/login/"><button type="button" class="btn btn-primary btn-xs">ログイン</button></a>
+                <a href="/admin/login/signin"><button type="button" class="btn btn-primary btn-xs">採用担当者様</button></a>
+            <% } %>
+                <a href="contact-us.html"><button type="button" class="btn btn-primary btn-xs">お問い合わせ</button></a>
+        </div>
+    </div>
+</header>

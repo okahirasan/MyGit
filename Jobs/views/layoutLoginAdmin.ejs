@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Login Page - JobEat? Admin</title>
+    
+    <meta name="description" content="User login page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link href="/plugins/ace/styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/plugins/ace/styles/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/plugins/ace/styles/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <!-- fonts -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-rtl.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="/plugins/ace/styles/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/plugins/ace/js/html5shiv.js"></script>
+    <script src="/plugins/ace/js/respond.min.js"></script>
+    <script src="/plugins/ace/js/customValidate.js"></script>
+    <![endif]-->
+
+  </head>   
+    <body class="login-layout">
+      <%- body %>
+    </body>
+    <!-- basic scripts -->
+    <!--[if !IE]> --> 
+    <script type="text/javascript">
+      window.jQuery || document.write("<script src='/plugins/ace/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+    <!-- <![endif]--> 
+    <!--[if IE]>
+    <script type="text/javascript">
+      window.jQuery || document.write("<script src='/plugins/ace/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+      if("ontouchend" in document) document.write("<script src='/plugins/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <!-- inline scripts related to this page -->
+    <script type="text/javascript">
+       var visite = "<%= visite%>" + "-box";
+       jQuery('.widget-box.visible').removeClass('visible');
+       jQuery('#'+ visite ).addClass('visible');
+
+       function show_box(id) {
+       jQuery('.widget-box.visible').removeClass('visible');
+       jQuery('#'+id).addClass('visible');
+      }
+    </script>
+              <!-- Bring in the socket.io client -->
+    <script src="/linker/js/socket.io.js"></script>
+    <script src="/linker/js/sails.io.js"></script>
+    <script src="/linker/js/jquery.validate.min.js"></script>
+    <script src="/linker/js/app.js"></script>
+    <script src="/linker/js/customValidate.js"></script>
+</html>

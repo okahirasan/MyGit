@@ -1,0 +1,44 @@
+<div id="edit-image" class="tab-pane">
+	<!-- general -->	
+	<div class="row">
+			<h4 class="header blue bolder smaller">イメージ管理情報</h4>
+			<div class="col-xs-12 col-sm-12">
+				<div class="alert alert-block alert-success">
+					<button type="button" class="close" data-dismiss="alert">
+						<i class="icon-remove"></i>
+					</button>
+					<i class="icon-ok green"></i>
+					<%= lady.name%>
+					<strong class="green">
+						<small>様</small>
+					</strong>
+						のプロフィール画像の管理です。最大６個登録できます。
+						<i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+						<a href="/Admin/edit" class="pink">やり方がわからない方はこちらへ</a>
+				</div>
+					<ul class="ace-thumbnails">
+						<% if(lady.image.id == 999 || lady.image[0].id == 999) { %>
+						<% for(var h=0; h < 6; h++) { %>
+							<li>
+								<img id="Newimage<%=h%>" class="ladyImage ladyprof editable img-responsive" alt="" src="/images/noimage.gif" style="height:200px"/>
+							</li>
+						<% } %>
+						<% } else {%>
+							<% for(var i=0; i < lady.image.length; i++) { %>
+              <li>
+								<div style="width:300px;height:200px;border:none;">
+									<img id="image<%= lady.image[i].id%>" class="ladyImage ladyprof editable img-responsive" alt="" src="/images/Lady/<%= lady.id%>/image<%=i%>.<%= lady.image[i].ex%>"/>
+								</div>
+							</li>
+							<% } %>
+							<% for(var j= 0; j < 6 - lady.image.length; j++) { %>
+								<li>
+									<img id="Newimage<%=j%>" class="ladyImage ladyprof editable img-responsive" alt="" src="/images/noimage.gif" style="height:200px"/>
+								</li>
+							<% } %>
+						<% } %>
+						
+					</ul>
+			</div>
+	</div><!-- /row -->
+</div>

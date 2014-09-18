@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %></title>
+    <meta name="description" content="3 styles with inline editable feature" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link href="/plugins/ace/styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/plugins/ace/styles/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/plugins/ace/styles/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/jquery.gritter.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/select2.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/bootstrap-editable.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/bootstrap-timepicker.css" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-skins.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="/plugins/ace/styles/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="/plugins/ace/js/ace-extra.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/plugins/ace/js/html5shiv.js"></script>
+    <script src="/plugins/ace/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body>
+      <div class="navbar" id="navbar">
+      <script type="text/javascript">
+        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+      </script>
+        <%- partial('../shared/topNavi')%>
+      </div>
+      <div class="main-container container-fluid">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+          <span class="menu-text"></span>
+        </a>
+        <%- partial('../shared/sideNavi')%>
+        <%- body %>
+        <!-- /.main-content -->
+      </div><!-- /.main-container -->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+      <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+
+    <!-- Bring in the socket.io client -->
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <!-- then beef it up with some convenience logic for talking to Sails.js -->
+    <script type="text/javascript" src="/js/sails.io.js"></script>
+    <!-- listen on socket.io for incoming messages -->
+		<script src="/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+            window.jQuery || document.write("<script src='/plugins/ace/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='/plugins/ace/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+            if("ontouchend" in document) document.write("<script src='/plugins/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="/plugins/ace/js/bootstrap.min.js"></script>
+    <script src="/plugins/ace/js/typeahead-bs2.min.js"></script>
+    <!-- page specific plugin scripts -->
+    <!--[if lte IE 8]>
+      <script src="/plugins/ace/js/excanvas.min.js"></script>
+    <![endif]-->
+		<script src="/plugins/ace/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="/plugins/ace/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/plugins/ace/js/jquery.gritter.min.js"></script>
+		<script src="/plugins/ace/js/bootbox.min.js"></script>
+		<script src="/plugins/ace/js/jquery.slimscroll.min.js"></script>
+		<script src="/plugins/ace/js/jquery.easy-pie-chart.min.js"></script>
+		<script src="/plugins/ace/js/jquery.hotkeys.min.js"></script>
+		<script src="/plugins/ace/js/bootstrap-wysiwyg.min.js"></script>
+		<script src="/plugins/ace/js/select2.min.js"></script>
+		<script src="/plugins/ace/js/date-time/bootstrap-datepicker.min.js"></script>
+		<script src="/plugins/ace/js/date-time/bootstrap-timepicker.min.js"></script>
+		<script src="/plugins/ace/js/fuelux/fuelux.spinner.min.js"></script>
+		<script src="/plugins/ace/js/x-editable/bootstrap-editable.min.js"></script>
+		<script src="/plugins/ace/js/x-editable/ace-editable.min.js"></script>
+		<script src="/plugins/ace/js/jquery.maskedinput.min.js"></script>
+		<script src="/plugins/ace/js/bootstrap-colorpicker.min.js"></script>
+
+    <!-- ace scripts -->
+    <script src="/plugins/ace/js/ace-elements.min.js"></script>
+    <script src="/plugins/ace/js/ace.min.js"></script>
+    <script src="/plugins/ace/js/ace-prof.js"></script>
+    <script src="/plugins/ace/js/ace-Origin.js"></script>
+    <script src="/plugins/ace/js/bootstrap-tag.min.js"></script>
+		<script src="/js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="/js/customLadyProfValidate.js"></script>
+		<script type="text/javascript" src="/js/customSelectBox.js"></script>
+		<style>
+			.editSpan{
+				height:30px;
+			}
+			.pullMRight{
+				margin:5px 100px 0 0;
+			}
+			.cursorSet{
+				cursor:pointer;cursor:hand"
+			}
+		</style>
+    <script>
+		var ADDCNT = 1;
+		var ADDTIME_CNT = 0;
+		var DEFAULT_LOOP = 11;
+		var ADDCORCE =[1];
+		var colarArry = ["red","orange","blue","green","grey","dark","pink","yellow"];
+		var colarArry2 = ["danger","warning","primary","success","grey","inverse","pink","yellow"];
+		//ヘッダ時間
+		var RANGE = ["range1", "range2", "range3", "range4", "range5", "range6"];
+		//ヘッダ固定
+		var FIX = { "nominate": true, "reNominate": true, "extra": true, "cancel": true, "expences": true };
+		jQuery(function($) {
+			//skin設定
+			var body = $(document.body);
+			body.addClass('skin-2');
+      $('[data-rel=tooltip]').tooltip({container:'body'});
+      $('.input-mask-phone').mask('999-999-9999');
+      $('.input-mask-phoneMV').mask('999-9999-9999');
+      $('#tel').val('<%= shop.tel%>');
+			if('<%= shop.mobileTel%>' != "undefined"){
+				$('#mobileTel').val('<%= shop.mobileTel%>');
+			}
+			
+			SetDropDown("shopType","drpShopType",false,'<%= shop.shopType.id%>');
+			SetSelectArea2("drpAdress1", '/common/GetArea','<%= shop.adress1.id%>');
+			EditTableSetting();
+			var minPrice = $('#spinner2').val();
+			for (var i=1; i <= 6; i++) {
+				var price = minPrice * 1 + (i - 1) * 4000;
+        $('#0price' + i).text(price);
+
+			}
+			if('<%= shop.startTime%>' != "undefined"){
+        $('#startTime').timepicker('setTime', '<%= shop.startTime%>');
+			}else{
+        $('#startTime').timepicker('setTime', '09:00 AM');
+			}
+      if('<%= shop.endTime%>' != "undefined"){
+        $('#endTime').timepicker('setTime', '<%= shop.endTime%>');
+			}else{
+        $('#endTime').timepicker('setTime', '11:00 PM');
+			}
+						//alert($('#startTime').val().split(' ')[1]);
+			var st = $('#startTime').val().split(' ')[0];
+			var end = $('#endTime').val().split(' ')[0];
+			if ($('#startTime').val().split(' ')[1] == "PM") {
+				st = $('#startTime').val().split(' ')[0].split(':')[0] * 1+ 12 + ":" + $('#startTime').val().split(' ')[0].split(':')[1]
+			}
+			if ($('#endTime').val().split(' ')[1] == "PM") {
+				end = $('#endTime').val().split(' ')[0].split(':')[0] * 1+ 12 + ":" + $('#endTime').val().split(' ')[0].split(':')[1];
+			}
+			$('#corce0Time').text(st + " - " + end);
+
+			$('[data-rel=popover]').popover({container:'body'});
+			DelSet();
+		});
+		
+    $('#spinner1').ace_spinner({value:2,min:2,max:10,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+		.on('change', function(){
+			//alert(this.value)
+		});
+		var minPrice = 10000;
+		if('<%= shop.minPrice%>' != "undefined")
+		{
+			minPrice = <%= shop.minPrice%>;
+		}
+    $('#spinner2').ace_spinner({value:minPrice,min:3000,max:100000,step:1000, btn_up_class:'btn-info' , btn_down_class:'btn-info'})
+		.on('change', function(){
+			//alert(this.value)
+		});
+
+		$('.timepicker').timepicker();
+		// tab設定
+		var editID = "<%= req.session.currentTab%>";
+		jQuery("#li-" + editID.replace("edit","tab")).addClass('active');
+		jQuery("#" + editID.replace("tab","edit")).addClass('active');
+		
+		$('#addCorceTime').click(function () {
+			//alert(range[range.length-1])
+			var addRow = RANGE[RANGE.length - 1].replace("range", "") * 1 + 1;
+			var lastRangeId = RANGE[RANGE.length - 1];
+			RANGE.push("range" + addRow);
+			var addHour = $('#' + lastRangeId).text() * 1 + 30;
+			$('#liEndTime').before($("<li style='height:45px;'>")
+											.append("<span class='editable range editSpan editable-click' id='range" + addRow + "'>" + addHour + "</span>min")
+											.append("<i class='light-orange bigger pull-right pullMRight delRow' id='delrange" + addRow + "'>削除")
+											);
+
+			for (var i = 0; i < ADDCNT; i++) {
+				$("#liEndPrice" + i).before($("<li style='height:45px;'>")
+				.append("<span class='editable price editSpan editable-click' id='" + i + "price" + addRow + "'>12000</span><span>yen</span>"));
+			}
+			DEFAULT_LOOP = DEFAULT_LOOP + 1;
+			EditTableSetting();
+			DelSet();
+			return false;
+		});
+		
+		function DelSet() {
+		    $('.delRow').hover(function () {
+		        $(this).addClass('cursorSet');
+		    }, function () {
+		        $(this).removeClass('cursorSet');
+		    });
+		}
+
+		//$('.btnCorseDel').click(function () {
+		$('#article').on('click', '.btnCorseDel', function(){
+			if(ADDCNT == 1){
+				$(".alert").remove();
+				$("#rowTop").after("<div class='alert alert-danger'>コースが一つの場合は削除できません。</div>");
+				$(".alert").fadeOut(5000);
+				return false;
+			}else{
+				//ADDCNT = ADDCNT -1;
+        var delNo = this.id.replace("delCorce", "");		
+				$("#corce" + delNo).remove();
+				return false;
+			}
+			return false;
+		});
+		
+	$('#addCorce').click(function () {
+	    var color = colarArry[ADDCNT];
+			if (ADDCNT >= 7) {
+				var no = ADDCNT - 7;
+				color = colarArry[no];
+			}
+	    $('#article').append($("<div class='pricing-span' id='corce" + ADDCNT + "'>")
+	           .append($("<div class='widget-box pricing-box-small'>")
+	           .append($("<div class='widget-header header-color-" + color + "' id='widgetH" + ADDCNT + "'>")
+	           .append("<span class='editable corce' id='corce" + ADDCNT + "Name'>追加コース" + ADDCNT + "</span>")
+	           )));
+	    $('#widgetH' + ADDCNT).after("<div class='widget-body' id='widgetBody" + ADDCNT + "'><div class='widget-main no-padding' id='widgetM" + ADDCNT + "'></div></div>");
+	    $('#widgetM' + ADDCNT).after("<ul class='list-unstyled list-striped pricing-table' id='priceUl" + ADDCNT + "'></ul>");
+	    $('#priceUl' + ADDCNT).append("<li style='height:45px;'> <span class='editable time editSpan' id='corce" + ADDCNT + "Time'>9:00 - 12:00</span></li>");
+
+	    for (var i = 0; i < RANGE.length; i++) {
+					var before = ((ADDCNT - 1) + RANGE[i].replace("range", "price"));
+					var beforePrice = $('#' + before).text() * 1 + 3000;
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan' id='" + ADDCNT + RANGE[i].replace("range", "price") + "'>" + beforePrice + 	"</span><span>yen</span> </li>");
+	    }
+
+	    if (FIX["nominate"]) {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;' id='liEndPrice" + ADDCNT + "'><span class='editable price editSpan' id='" + ADDCNT + "price-nominate'>1000</span><span>yen</span> </li>");
+	    } else {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;' id='liEndPrice" + ADDCNT + "'><span class='editable price editSpan hide' id='" + ADDCNT + "price-nominate'>1000</span><i class='icon-remove red'></i><span class='hide'>yen</span> </li>");
+	    }
+
+	    if (FIX["reNominate"]) {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan' id='" + ADDCNT + "price-reNominate'>1000</span><span>yen</span> </li>");
+	    } else {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan hide' id='" + ADDCNT + "price-reNominate'>1000</span><i class='icon-remove red'></i><span class='hide'>yen</span> </li>");
+	    }
+
+	    if (FIX["extra"]) {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan' id='" + ADDCNT + "price-extra'>1000</span><span>yen</span> </li>");
+	    } else {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan hide' id='" + ADDCNT + "price-extra'>1000</span><i class='icon-remove red'></i><span class='hide'>yen</span> </li>");
+	    }
+
+	    if (FIX["cancel"]) {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan' id='" + ADDCNT + "price-cancel'>1000</span><span>yen</span> </li>");
+	    } else {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan hide' id='" + ADDCNT + "price-cancel'>1000</span><i class='icon-remove red'></i><span class='hide'>yen</span> </li>");
+	    }
+
+	    if (FIX["expences"]) {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan' id='" + ADDCNT + "price-expences'>1000</span><span>yen</span> </li>");
+	    } else {
+	        $('#priceUl' + ADDCNT).append("<li style='height:45px;'><span class='editable price editSpan hide' id='" + ADDCNT + "price-expences'>1000</span><i class='icon-remove red'></i><span class='hide'>yen</span> </li>");
+	    }
+			$('#widgetBody' + ADDCNT).after($("<div>")
+															 .append($("<a href='#' class='btn btn-block btn-" + colarArry2[ADDCNT] + " btnCorseDel' id='delCorce" + ADDCNT + "' >")
+															 .append("<i class='icon-trash bigger-110'></i>")
+															 .append("<span>取消</span>")
+																			));
+	    ADDCNT++;
+	    EditTableSetting();
+	    return false;
+	});
+		
+    $('#ulMain').on('click', '.delRow', function(){
+        var rowNo = this.id.replace("delrange", "");
+        if (isFinite(rowNo)) {
+            $(this).parent().remove();
+            for (var i = 0; i < ADDCNT; i++) {
+                $('#' + i + 'price' + rowNo).parent().remove();
+            }
+            for (var i = 0; i < RANGE.length; i++) {
+                if (RANGE[i] == "range" + rowNo) {
+                    RANGE.splice(i, 1);
+                }
+            }
+        } else {
+            var fixData = FIX[this.id.replace("del", "")];
+            if (fixData) {
+                $(this).text("リセット");
+                for (var i = 0; i < ADDCNT; i++) {
+                    $('#' + i + 'price-' + this.id.replace("del", "")).next().addClass("hide");
+                    $('#' + i + 'price-' + this.id.replace("del", "")).after("<i class='icon-remove red'></i>");
+                    $('#' + i + 'price-' + this.id.replace("del", "")).addClass("hide");
+                }
+                FIX[this.id.replace("del", "")] = false;
+            } else {
+                $(this).text("削除");
+                for (var i = 0; i < ADDCNT; i++) {
+                    $('#' + i + 'price-' + this.id.replace("del", "")).next().remove();
+                    $('#' + i + 'price-' + this.id.replace("del", "")).next().removeClass("hide");
+                    $('#' + i + 'price-' + this.id.replace("del", "")).removeClass("hide");
+                }
+                FIX[this.id.replace("del", "")] = true;
+            }
+        }
+        return false;
+    });		
+		
+    // SetDropDown start
+		function SetDropDown(value,setId,isMulti,data) {
+			$.ajax({
+				type: 'GET',
+				url: '/common/GetOption/' + value,
+				dataType: 'json',
+				success: function(json){
+					var optionItems = new Array();
+					optionItems.push(new Option("", ""));
+					for (cnt in json) {
+						if (optionItems.indexOf(json[cnt].name) == -1) {
+							optionItems.push(json[cnt].name);
+						}
+						optionItems.push(new Option(json[cnt].name, json[cnt].id));
+					}
+					$('#' + setId).append(optionItems);
+					if (isMulti) {
+						//var jsonText = JSON.stringify(data);
+            $("#" + setId).select2(
+						{placeholder: "選択してください。複数選択可能です。",
+						allowClear: true}
+						);
+						if (setId == "drpTags" ) {
+							SetDataTags1(setId);
+						}
+
+					}else{
+            var array = [data];
+						$('#' + setId).val(array).select2();
+					}
+				}
+			});
+		};
+		
+		function GetArea2(adress1,setID) {
+			$.ajax({
+				type: 'GET',
+				url: '/common/GetCity/' + adress1,
+				dataType: 'json',
+				success: function(json){
+					var optionItems = new Array();
+					optionItems.push(new Option("", ""));
+					for (cnt in json) {
+						optionItems.push(new Option(json[cnt].name, json[cnt].id));
+					}
+					$("#" + setID).append(optionItems);
+					var adress2 = '<%= shop.adress2%>';
+					if (adress2 != undefined) {
+						$("#drpAdress2").val('<%= shop.adress2.id%>');
+					}
+				}
+			});
+		}
+			
+    // SetDropDown end
+		function EditTableSetting() {		
+				$('.time').editable({
+						type: 'text',
+						name : 'time',
+					});
+				$('.corce').editable({
+						type: 'text',
+						name : 'name',
+					});
+				$('.range').editable({
+						type: 'spinner',
+						name : 'time',
+						spinner : {
+							min : 45, max:300, step:5
+						}
+					});
+				$('.price').editable({
+						type: 'spinner',
+						name : 'time',
+						spinner : {
+							min : 4500, max:60000, step:1000
+						}
+					});
+			}
+			
+    function SetSelectArea2(setId, setUrl, values) {
+			$('#' + setId).empty();
+			$.ajax({
+				type: 'GET',
+				url: setUrl,
+				dataType: 'json',
+				success: function(json){
+					var optionItems = new Array();
+					optionItems.push(new Option("", ""));
+					var groupArray = [];
+					for (cnt in json) {
+						if (optionItems.indexOf(json[cnt].name) == -1) {
+							optionItems.push(json[cnt].name);
+						}
+						optionItems.push(new Option(json[cnt].kName, json[cnt].kId));
+					}
+          $("#drpAdress2").empty();
+          GetArea2(values,'drpAdress2');
+					$('#' + setId).append(optionItems);
+          $("#" + setId).select2(
+						{placeholder: "選択してください。複数選択可能です。",
+						allowClear: true}
+					);
+					//var array = [];
+					$('#' + setId).val(values).select2();
+				}
+			});
+		};
+		
+    $("#drpAdress1").change(function () {
+          var area1 = $(this).val();
+					if (area1 == "") {
+						return;
+					}   
+					$("#drpAdress2").empty();
+          GetArea2(area1,'drpAdress2');
+     });
+		
+    $('#btnSave_prof').click(function () {
+        $('#adress1Name').val($('#drpAdress1 option:selected').text());
+        $('#adress2Name').val($('#drpAdress2 option:selected').text());
+        var corseNameList = [];
+				var corseRangeList = [];
+				var corsePriceList = [];
+				var corsePrice = {};
+
+				var corseLange = $('#ulMain').children('li');
+				for (var i = 1; i < corseLange.length; i++) {
+						corseRangeList.push(corseLange.eq(i).children('span').text());
+				}
+
+				var corseParent = $('#article').children('div');
+				var corseLen = corseParent.length;
+				for (var i = 0; i < corseLen; i++) {
+						var corseName = corseParent.eq(i).find('.corce').text();
+						var corseDetail = corseParent.eq(i).find('li')
+						corseNameList.push(corseName);
+						//alert(corseDetail.length);
+						for (var j = 1; j < corseDetail.length; j++) {
+								corsePriceList.push(corseDetail.eq(j).children('span').text());
+						}
+						var key = "detail" + i;
+						corsePrice[key] = corsePriceList;
+				}
+				var data ="";
+				for (var priceData in corsePrice) {
+						if (data == "") {
+							data = corsePrice[priceData];
+						}else{
+							data = data + ":" + corsePrice[priceData];
+						}
+				}
+				$('#hidCorseRangeList').val(corseRangeList);
+				$('#hidCorseNameList').val(corseNameList);
+				$('#hidCorsePriceList').val(data);
+				
+		});
+    </script>
+    </body>
+</html>

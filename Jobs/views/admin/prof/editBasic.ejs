@@ -1,0 +1,51 @@
+<div id="edit-basic" class="tab-pane">
+	<h4 class="header blue bolder smaller">Admin</h4>
+	<!-- general -->	
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="form-field-adminname">ユーザー名</label>				
+				<div class="col-sm-8">
+					<input class="col-xs-12 col-sm-10" type="text" name="name" placeholder="Username" value="<%= admin.name%>" />
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="form-field-email">メールアドレス</label>
+				<div class="col-sm-8">
+					<input class="col-xs-12 col-sm-10" readonly="" type="email" id="form-field-adminname" value="<%= admin.email%>" />
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="form-field-email">利用プラン</label>
+				<div class="col-sm-8">
+					<input class="col-xs-12 col-sm-10" readonly="" type="text" name="planName" value="<%= admin.pricePlan.id%>" />
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+		</div>
+		<div class="vspace-xs"></div>
+		<div class="col-xs-12 col-sm-6">
+      <% if (admin.avatar == "noimage.gif") { %>
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">
+					<i class="icon-remove"></i>
+				</button>
+				<strong>
+					<i class="icon-remove"></i>
+					No Image!　
+				</strong>
+					プロフィール画像を登録してください。
+				<br />
+			</div>
+			<% } %>
+			<input type="hidden" id="adminid" value="<%= admin.id%>">
+			<img id="avatar" class="editable img-responsive" alt="" src="/images/avatars/<%= admin.avatar%>" />
+		</div>
+	</div><!-- /row -->
+</div>

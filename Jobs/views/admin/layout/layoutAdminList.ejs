@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %></title>
+    <meta name="description" content="overview &amp; stats" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link href="/plugins/ace/styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/plugins/ace/styles/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/plugins/ace/styles/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <!-- fonts -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-skins.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="/plugins/ace/styles/ace-ie.min.css" />
+    <![endif]-->
+    <script src="/plugins/ace/js/ace-extra.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/plugins/ace/js/html5shiv.js"></script>
+    <script src="/plugins/ace/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+      window.overlord = { csrf: "<%= _csrf %>" };
+    </script>
+  </head>
+
+    <body>
+      <div class="navbar" id="navbar">
+      <script type="text/javascript">
+        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+      </script>
+        <%- partial('../shared/topNavi')%>
+      </div>
+      <div class="main-container container-fluid">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+          <span class="menu-text"></span>
+        </a>
+        <%- partial('../shared/sideNavi')%>
+        <%- body %>
+        <!-- /.main-content -->
+      </div><!-- /.main-container -->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+      <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+
+    <!-- Bring in the socket.io client -->
+    <script src="/js/socket.io.js"></script>
+    <script src="/js/sails.io.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/customValidate.js"></script>
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+            window.jQuery || document.write("<script src='/plugins/ace/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='/plugins/ace/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+            if("ontouchend" in document) document.write("<script src='/plugins/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="/plugins/ace/js/bootstrap.min.js"></script>
+    <script src="/plugins/ace/js/typeahead-bs2.min.js"></script>
+    <!-- page specific plugin scripts -->
+    <script src="/plugins/ace/js/jquery.dataTables.min.js"></script>
+    <script src="/plugins/ace/js/jquery.dataTables.bootstrap.js"></script>
+    <!--[if lte IE 8]>
+    <script src="/plugins/ace/js/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="/plugins/ace/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="/plugins/ace/js/jquery.slimscroll.min.js"></script>
+    <script src="/plugins/ace/js/jquery.easy-pie-chart.min.js"></script>
+    <script src="/plugins/ace/js/jquery.sparkline.min.js"></script>
+    <script src="/plugins/ace/js/flot/jquery.flot.min.js"></script>
+    <script src="/plugins/ace/js/flot/jquery.flot.pie.min.js"></script>
+    <script src="/plugins/ace/js/flot/jquery.flot.resize.min.js"></script>
+    <!-- ace scripts -->
+    <script src="/plugins/ace/js/ace-elements.min.js"></script>
+    <script src="/plugins/ace/js/ace.min.js"></script>
+    <script type="text/javascript">
+    jQuery(function($) {
+      //skinê›íË
+      var body = $(document.body);
+      body.addClass('skin-2');
+      var oTable1 = $('#sample-table-2').dataTable( {
+        "aoColumns": [
+          { "bSortable": false },
+          null, null,null, null, null,
+          { "bSortable": false }
+      ] } );
+                  
+      //start
+      SetDropDown("shopType","shopType");
+      //end
+    })
+    
+    // SetDropDown start
+		function SetDropDown(value,setId) {
+			$.ajax({
+				type: 'GET',
+				url: '/common/GetOption/' + value,
+				dataType: 'json',
+				success: function(json){
+					var optionItems = new Array();
+					optionItems.push(new Option("", ""));
+					for (cnt in json) {
+						optionItems.push(new Option(json[cnt].name, json[cnt].id));
+					}
+          $('#' + setId).append(optionItems);
+				}
+			});
+		};
+    // SetDropDown end
+    </script>
+    </body>
+</html>

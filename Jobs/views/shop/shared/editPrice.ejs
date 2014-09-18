@@ -1,0 +1,130 @@
+<div id="edit-price" class="tab-pane">
+	<!-- general -->	
+	<div class="row">
+		<div class="col-xs-12 col-sm-10">
+			<h4 class="header blue bolder smaller">料金情報</h4>
+			<div class="col-xs-12 col-sm-10">
+        <div class="col-xs-4 col-sm-3">
+					<a href="#" class="btn btn-block btn-inverse" id="addCorce">
+						<i class="icon-shopping-cart"></i>
+						<span>コースを追加</span>
+					</a>
+				</div>
+        <div class="col-xs-4 col-sm-3">
+          <a href="#" class="btn btn-block btn-inverse" id="addCorceTime">
+						<i class="icon-shopping-cart"></i>
+						<span>コースの時間を追加</span>
+          </a>
+				</div>
+			</div>
+				<% if(flash && flash.err) { %>
+					<div class="alert alert-danger">
+						<button type="button" class="close" data-dismiss="alert">
+							<i class="icon-remove"></i>
+						</button>
+						<i class="fa fa-frown-o"></i> 
+							<% Object.keys(flash.err).forEach(function(error) { %>
+									<strong><%-flash.err[error].name %></strong>：<%-flash.err[error].message %>
+							<% }) %>
+					</div>
+				<% } %>
+				<div class="row" id="rowTop">
+					<div class="col-xs-4 col-sm-3 pricing-span-header">
+						<div class="widget-box transparent">
+							<div class="widget-header">
+								<h5 class="bigger lighter">コース</h5>
+							</div>
+							<div class="widget-body">
+								<div class="widget-main no-padding">
+									<ul class="list-unstyled list-striped pricing-table-header" id="ulMain">
+										<li style="height:45px;"><span class="editable editSpan">時間帯</span></li>
+										<li style="height:45px;">
+											<span class="editable range editSpan" id="range1">45</span>min </li>
+										<li style="height:45px;" id="test">
+											<span class="editable range editSpan" id="range2">60</span>min
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delrange2">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable range editSpan" id="range3">90</span>min
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delrange3">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable range editSpan" id="range4">120</span>min
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delrange4">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable range editSpan" id="range5">150</span>min
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delrange5">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable range editSpan" id="range6">180</span>min
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delrange6">削除</i>
+										</li>	
+										<li style="height:45px;" id="liEndTime">
+											<span class="editable editSpan" id="nominate">指名</span>
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delnominate">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable editSpan" id="reNominate">本指名</span>
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delreNominate">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable editSpan" id="extra">延長</span>
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delextra">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable editSpan" id="cancel">キャンセル</span>
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delcancel">削除</i>
+										</li>
+										<li style="height:45px;">
+											<span class="editable editSpan" id="expences">交通費</span>
+											<i class="light-orange bigger pull-right pullMRight delRow" id="delexpences">削除</i>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-8 col-sm-9 pricing-span-body" id="article">
+            <!-- article Start -->
+						<div class="pricing-span" id="corce0">
+							<div class="widget-box pricing-box-small">
+								<div class="widget-header header-color-red3">
+									<span class="editable corce" id="corce0Name">通常</span>
+								</div>
+								<div class="widget-body">
+									<div class="widget-main no-padding">
+										<ul class="list-unstyled list-striped pricing-table">
+										<li style="height:45px;"><span class="editable time editSpan" id="corce0Time"></span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price1">10000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price2">14000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price3">18000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price4">22000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price5">26000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price6">30000</span><span>yen</span> </li>	
+										<li style="height:45px;" id="liEndPrice0"><span class="editable price editSpan" id="0price-nominate">1000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price-reNominate">1000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price-extra">1000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price-cancel">1000</span><span>yen</span> </li>
+										<li style="height:45px;"><span class="editable price editSpan" id="0price-expences">1000</span><span>yen</span> </li>
+										</ul>
+									</div>
+								</div>
+								<div>
+									<a href="#" class="btn btn-block btn-danger btnCorseDel" id="delCorce0" >
+										<i class="icon-trash bigger-110"></i>
+										<span>取消</span>
+									</a>
+								</div>
+							</div>
+						</div>
+            <!-- article ENDS -->
+				</div><!-- PAGE CONTENT ENDS -->
+				<input type="hidden" name="hidCorseRangeList" id="hidCorseRangeList" />
+				<input type="hidden" name="hidCorseNameList" id="hidCorseNameList" />
+				<input type="hidden" name="hidCorsePriceList" id="hidCorsePriceList" />
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+	</div>
+</div>

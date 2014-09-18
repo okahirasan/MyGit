@@ -1,0 +1,20 @@
+<div id="edit-QA" class="tab-pane">
+	<!-- general -->	
+	<div class="row">
+		<div class="col-xs-12 col-sm-10">
+			<h4 class="header blue bolder smaller">QA情報　女の子のプロフィール画面に表示されます</h4> 
+      <div class="form-group">
+				<label class="col-sm-4 control-label no-padding-right" for="q1">Q1:血液型？</label>				
+				<div class="col-sm-8">
+          <div class="clearfix">
+						<% if(lady.nameTitle != undefined){%>
+						<input class="col-xs-12 col-sm-8" type="text" name="q1" id="q1" placeholder="" value="<%= lady.nameTitle%>" />
+						<% } else {%>
+						<input class="col-xs-12 col-sm-8" type="text" name="q1" id="q1" placeholder="血液型？" />
+						<% } %>
+          </div>
+				</div>
+			</div>
+		</div>
+	</div><!-- /row -->
+</div>

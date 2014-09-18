@@ -1,0 +1,73 @@
+<div class="white-row">
+	<div class="profile-user-info profile-user-info-striped">
+		<div class="profile-info-row">
+			<div class="profile-info-name"> 氏名 </div>
+			<div class="profile-info-value">
+				<span class="editable" id="username"><%= user.name %></span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"> e-mail </div>
+			<div class="profile-info-value">
+				<span class="editable" id="username"><%= user.email %></span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"> 性別 </div>
+			<div class="profile-info-value">
+				<span class="editable" id="username"><%= user.sex.name %></span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"> 生年月日 </div>
+			<div class="profile-info-value">
+				<span class="editable">
+					<%= user.birth_year %>年
+					<%= user.birth_month %>月
+					<%= user.birth_day %>日
+					<% if(user.age != undefined && user.age != '114'){ %>
+					<%= user.age %>歳
+					<% } else {%>
+					 未設定
+					<% } %>
+				</span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"> 現住所 </div>
+			<div class="profile-info-value">
+				<span class="editable" id="username"><%= user.adress1.name %></span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"> 現職業 </div>
+			<div class="profile-info-value">
+				<span class="editable" id="username"><%= user.job.name %></span>
+			</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"> サムネイル画像 </div>
+			<div class="profile-info-value">
+				<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">
+					<i class="icon-remove"></i>
+				</button>
+				<strong>
+					<i class="icon-remove"></i>
+					No Image!　
+				</strong>
+					プロフィール画像を登録してください。
+				<br />
+		</div>
+		<input type="hidden" id="userid" value="<%= user.id%>">
+		<img id="avatar" class="editable img-responsive" alt="" src="/images/avatars/<%= user.id%>.png" />
+					</div>
+		</div>
+		<div class="profile-info-row">
+			<div class="profile-info-name"></div>
+			<div class="profile-info-value">
+				<a href="/user/edit/<%= user.id %>/basic"><button type="button" class="btn btn-primary btn-xs">編集</button></a>
+			</div>
+		</div>
+	</div>
+</div>

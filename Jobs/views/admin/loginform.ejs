@@ -1,0 +1,56 @@
+<div class="widget-body">
+    <div class="widget-main">
+        <h4 class="header blue lighter bigger">
+            <i class="icon-coffee green"></i>
+            ログインしてください！！
+        </h4>
+							<%- partial('../shared/flashError')%>
+
+        <div class="space-6"></div> 
+        <form action="/admin/signin" method="POST" class="">
+            <fieldset>
+                <label class="block clearfix">
+                    <span class="block input-icon input-icon-right">
+                        <input type="text" class="form-control" placeholder="メールアドレス" name="email" id="txtEmail" />
+                        <i class="icon-envelope"></i>
+                    </span>
+                </label>          
+                <label class="block clearfix">
+                    <span class="block input-icon input-icon-right">
+                        <input type="password" class="form-control" placeholder="パスワード"  name="password" />
+                        <i class="icon-lock"></i>
+                    </span>
+                </label>
+                <div class="space"></div>
+                <div class="clearfix">
+                    <label class="inline">
+                        <input type="checkbox" class="ace" name="chkRegistId" id="chkRegistId"/>
+                        <span class="lbl"> 次回からIDの入力を省略</span>
+                    </label>         
+                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                    <i class="icon-key"></i>
+                    ログイン
+                    </button>
+                </div>
+                <div class="space-4"></div>
+            </fieldset>
+            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+        </form>
+    </div>
+    <!-- /widget-main -->
+    <div class="toolbar clearfix">
+        <div>
+            <a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
+            <i class="icon-arrow-left"></i>
+            パスワードを忘れました
+            </a>
+        </div>
+        <div>
+            <a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
+            新規登録
+            <i class="icon-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- /widget-body -->

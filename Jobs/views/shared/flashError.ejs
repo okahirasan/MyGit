@@ -1,0 +1,8 @@
+<% if(flash && flash.err) { %>
+    <div class="alert alert-danger">
+    <i class="fa fa-frown-o"></i> 
+    <% Object.keys(flash.err).forEach(function(error) { %>
+        <strong><%-flash.err[error].name %></strong>：<%-flash.err[error].message %>
+    <% }) %>
+    </div>
+<% } %>

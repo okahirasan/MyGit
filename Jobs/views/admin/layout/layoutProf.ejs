@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %></title>
+    <meta name="description" content="3 styles with inline editable feature" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link href="/plugins/ace/styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/plugins/ace/styles/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/plugins/ace/styles/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/jquery.gritter.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/select2.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/bootstrap-editable.css" />
+    <!-- fonts -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-skins.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="/plugins/ace/styles/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="/plugins/ace/js/ace-extra.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/plugins/ace/js/html5shiv.js"></script>
+    <script src="/plugins/ace/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body>
+      <div class="navbar" id="navbar">
+      <script type="text/javascript">
+        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+      </script>
+        <%- partial('../shared/topNavi')%>
+      </div>
+      <div class="main-container container-fluid">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+          <span class="menu-text"></span>
+        </a>
+        <%- partial('../shared/sideNavi')%>
+        <%- body %>
+        <!-- /.main-content -->
+      </div><!-- /.main-container -->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+      <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+
+    <!-- Bring in the socket.io client -->
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <!-- then beef it up with some convenience logic for talking to Sails.js -->
+    <script type="text/javascript" src="/js/sails.io.js"></script>
+    <!-- listen on socket.io for incoming messages -->
+    <script type="text/javascript" src="/js/app.js"></script>
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+            window.jQuery || document.write("<script src='/plugins/ace/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='/plugins/ace/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+            if("ontouchend" in document) document.write("<script src='/plugins/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="/plugins/ace/js/bootstrap.min.js"></script>
+    <script src="/plugins/ace/js/typeahead-bs2.min.js"></script>
+    <!-- page specific plugin scripts -->
+    <!--[if lte IE 8]>
+      <script src="/plugins/ace/js/excanvas.min.js"></script>
+    <![endif]-->
+		<script src="/plugins/ace/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="/plugins/ace/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/plugins/ace/js/jquery.gritter.min.js"></script>
+		<script src="/plugins/ace/js/bootbox.min.js"></script>
+		<script src="/plugins/ace/js/jquery.slimscroll.min.js"></script>
+		<script src="/plugins/ace/js/jquery.easy-pie-chart.min.js"></script>
+		<script src="/plugins/ace/js/jquery.hotkeys.min.js"></script>
+		<script src="/plugins/ace/js/bootstrap-wysiwyg.min.js"></script>
+		<script src="/plugins/ace/js/select2.min.js"></script>
+		<script src="/plugins/ace/js/date-time/bootstrap-datepicker.min.js"></script>
+		<script src="/plugins/ace/js/fuelux/fuelux.spinner.min.js"></script>
+		<script src="/plugins/ace/js/x-editable/bootstrap-editable.min.js"></script>
+		<script src="/plugins/ace/js/x-editable/ace-editable.min.js"></script>
+		<script src="/plugins/ace/js/jquery.maskedinput.min.js"></script>
+
+    <!-- ace scripts -->
+    <script src="/plugins/ace/js/ace-elements.min.js"></script>
+    <script src="/plugins/ace/js/ace.min.js"></script>
+    <script src="/plugins/ace/js/ace-prof.js"></script>
+    <script src="/plugins/ace/js/ace-Origin.js"></script>
+    <script src="/plugins/ace/js/bootstrap-tag.min.js"></script>
+    <script>
+			jQuery(function($) {
+        //skin設定
+        var body = $(document.body);
+        body.addClass('skin-2');
+				});
+      // tab設定
+			jQuery("#li-" + "<%= req.session.currentTab%>").addClass('active');
+			var editId = "<%= req.session.currentTab%>".replace("tab","edit");
+			jQuery("#" + editId).addClass('active');
+			// tabクリック
+      $(".tab-prof").click(function(){
+					$("#hidTab").val(this.id);
+			});
+			
+			      // プラン設定
+      $(".btn-planChoice").click(function(){
+				//var btnid  = $(this).attr("id");
+				var palnId = this.id;
+				$("#selectPlan").text(this.id);
+				$("#alert-plan").fadeOut("slow");
+        $('#pricePlan').val(palnId);
+			});
+			
+    </script>
+    </body>
+</html>

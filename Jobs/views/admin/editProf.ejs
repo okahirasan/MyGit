@@ -1,0 +1,106 @@
+<div id="user-profile-3" class="user-profile row">
+	<form action="/admin/update" method="POST" class="form-horizontal">
+	<div class="col-sm-offset-1 col-sm-10">
+		<!-- well -->	
+		<div class="well well-sm">
+			<% if(admin) { %>
+				<input type="hidden" name="hiddenCurrent" value="<%= admin.currentTab%>" id="hidTab" />
+			<% } %>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			&nbsp;
+			<div class="inline middle blue bigger-110"> プロフィール 0% 完成しています </div>
+				&nbsp; &nbsp; &nbsp;
+			<div style="width:200px;" data-percent="0%" class="inline middle no-margin progress progress-striped active">
+				<div class="progress-bar progress-bar-success" style="width:0%"></div>
+			</div>
+		</div>
+		<!-- /well -->	
+		<div class="space"></div>
+			<!-- tab -->
+			<div class="tabbable">
+				<ul class="nav nav-tabs padding-16" id="ul-tab-prof">
+					<li id="li-tab-basic">
+						<a data-toggle="tab" href="#edit-basic" class="tab-prof" id="tab-basic">
+						<i class="green icon-edit bigger-125"></i>
+						管理者情報
+						</a>
+					</li>
+<!--          <li id="li-tab-company">
+						<a data-toggle="tab" href="#edit-company" class="tab-prof" id="tab-company">
+						<i class="red icon-heart bigger-125"></i>
+					  ショップ情報
+						</a>
+					</li>-->
+					<li id="li-tab-settings">
+						<a data-toggle="tab" href="#edit-settings" class="tab-prof" id="tab-settings">
+						<i class="purple icon-cog bigger-125"></i>
+						各種設定
+						</a>
+					</li>
+          <li id="li-tab-plan">
+						<a data-toggle="tab" href="#edit-plan" class="tab-prof" id="tab-plan">
+						<i class="pink icon-shopping-cart bigger-110"></i>
+						ご利用プラン
+						</a>
+					</li>
+					<li id="li-tab-password">
+						<a data-toggle="tab" href="#edit-password" class="tab-prof" id="tab-password">
+						<i class="blue icon-key bigger-125"></i>
+						Password
+						</a>
+					</li>
+				</ul>
+				<div class="tab-content profile-edit-tab-content">
+				<!-- tab1 basic -->
+				<%- partial('./prof/editBasic')%>
+				<!-- /tab1 basic -->
+				<!-- tab1 settings -->
+				<%- partial('editSettings')%>
+				<!-- tab1 settings -->
+				<!-- tab1 plan -->
+				<%- partial('editPlan')%>
+				<!-- tab1 plan -->
+				<div id="edit-password" class="tab-pane">
+					<div class="space-10"></div>		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-pass1">New Password</label>
+						<div class="col-sm-9">
+							<input type="password" id="form-field-pass1" />
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-pass2">Confirm Password</label>
+						<div class="col-sm-9">
+							<input type="password" id="form-field-pass2" />
+						</div>
+					</div>
+				</div>
+				
+				</div>
+			
+	</div>
+			
+	<div class="clearfix form-actions">
+		<div class="col-md-offset-3 col-md-9">
+			<button class="btn btn-info" type="submit" id="btnSave_prof">
+				<i class="icon-ok bigger-110"></i>
+				Save
+			</button>
+			&nbsp; &nbsp;
+			<button class="btn" type="reset">
+				<i class="icon-undo bigger-110"></i>
+				Reset
+			</button>
+		</div>
+	</div>
+	<input type="hidden" id="adress1Name" name="hidadress1Name">
+	<input type="hidden" id="adress2Name" name="hidadress2Name">
+	<input type="hidden" id="stockName" name="hidstockName">
+	<input type="hidden" id="positionName" name="hidpositionName">
+	<input type="hidden" id="lineName" name="hidlineName">
+	<input type="hidden" id="stationName" name="hidstationName">
+  <input type="hidden" id="pricePlan" name="hidpricePlan">
+	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+	</form>
+</div>

@@ -1,0 +1,37 @@
+<section class="container section-visible" id="prof-section">
+		<div class="row">
+			<%- partial('profNavi')%>
+			<div class="col-md-9">
+				<div class="tabs nomargin-top">
+						<!-- tabs -->
+						<ul class="nav nav-tabs">
+							<li id="tab1List" class="active">
+								<a href="#tab1" data-toggle="tab">
+									<i class="fa fa-heart"></i>基本情報
+								</a>
+							</li>
+							<li id="tab2List" >
+								<a href="#tab2" data-toggle="tab">
+									<i class="fa fa-cogs"></i>希望条件
+								</a>
+							</li>
+						</ul>
+						<!-- tabs content -->
+						<div class="tab-content">
+							<div id="tab1" class="tab-pane active">
+							<!-- showBaseic -->
+							<%- partial('profShowBasic')%>
+							<!-- /showBaseic -->
+							</div>
+							<div id="tab2" class="tab-pane">
+              <%- partial('profShowJob')%>
+							</div>
+						</div>
+						<!-- /tabs content -->
+					</div>
+					<!-- adv広告 -->
+          <%- partial('adv')%>
+					<!-- /adv広告 -->
+			</div>
+    </div>  
+</section>

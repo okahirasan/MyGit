@@ -1,0 +1,64 @@
+<form action="/user/update/<%= user.id %>/basic" method="POST">
+		<div class="white-row">
+				<div class="profile-user-info profile-user-info-striped">
+						<div class="profile-info-row">
+								<div class="profile-info-name"> 氏名 </div>
+								<div class="profile-info-value">
+										<input type="text" value="<%= user.name %>" class="form-control" name="name">
+								</div>
+						</div>
+						<div class="profile-info-row">
+								<div class="profile-info-name"> e-mail </div>
+								<div class="profile-info-value">
+										<input type="text" value="<%= user.email %>" class="form-control" name="email">
+								</div>
+						</div>
+						<div class="profile-info-row">
+								<div class="profile-info-name"> 性別 </div>
+								<div class="profile-info-value">
+								<label class="pointer">
+										<input type="radio" name="sex" value="0" /> <strong>男性</strong>
+								</label>							
+								<label class="pointer">
+										<input type="radio" name="sex" value="1" /> <strong>女性</strong>
+								</label>
+								</div>
+						</div>
+							<div class="profile-info-row">
+								<div class="profile-info-name"> 生年月日 </div>
+								<div class="profile-info-value">
+										<select name="birth_year" id="birth_year" class="form-control" style="width:150px;float:left;margin-right:20px;">
+										</select>
+										<select name="birth_month" id="birth_month" class="form-control pointer" style="width:100px;float:left;margin-right:20px;">
+										</select>
+										<select name="birth_day" id="birth_day" class="form-control pointer" style="width:100px;">
+										</select>
+								</div>
+						</div>
+						<div class="profile-info-row">
+								<div class="profile-info-name"> 現住所 </div>
+								<div class="profile-info-value">
+										<select class="form-control" id="adress1" name="adress1">
+										</select>
+								</div>
+						</div>
+						<div class="profile-info-row">
+								<div class="profile-info-name"> 現職業 </div>
+								<div class="profile-info-value">
+										<select class="form-control" id="nowJob" name="nowJob">
+										</select>
+								</div>
+						</div>
+						<div class="profile-info-row">
+								<div class="profile-info-name"></div>
+								<div class="profile-info-value">
+									 <button type="submit" class="btn btn-primary btn-xs" id="btnSave_prof">登録</button>
+									 <a href="/user/show/<%= user.id %>/basic"><button type="button" class="btn btn-primary btn-xs">戻る</button></a>
+								</div>
+                <input type="hidden" id="hidadress1" name="hidadress1">
+                <input type="hidden" id="hidnowJob" name="hidnowJob">
+								<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</div>
+				</div>
+		</div>
+</form>

@@ -1,0 +1,79 @@
+<!-- WRAPPER -->
+<div id="wrapper">
+	<!-- PAGE TITLE -->
+	<header id="page-title">
+		<div class="container">
+			<h1>新着 求人</h1>
+			<ul class="breadcrumb">
+				<li><a href="/home/index">Home</a></li>
+				<li>新着</li>
+				<li class="active" id="liAreaName"></li>
+			</ul>
+		</div>
+	</header>
+	<div class="container magazine top-no-header">
+		<div class="row" id="rowMain">
+			<!-- center column -->
+			<div class="col-md-9">
+				<!-- THREE COLUMNS -->
+				<div class="row">
+					<h3 class="page-header">
+							<a href="magazine-category.html" data-toggle="tooltip" title="view more"><i class="fa fa-plus-square-o"></i></a>
+							<strong class="styleColor">検索</strong>結果
+              <span class="countTo">
+							<strong data-to="<%= jobsCnt%>">0</strong>件
+							</span>
+					</h3>
+					<% _.each(jobs, function (job) { %>
+					<div class="col-md-4">
+						<!-- article item -->
+            <div class="card film art isotope-item">
+              <a href="portfolio-item.html" class="thumb">
+                <img src="/images/job/main/<%= job.image.main %>" alt="" title="">
+                <span class="overlay"><span class="fa fa-search"></span></span>
+              </a>
+              <div class="card-body">
+                <h2><a href="portfolio-item.html"><%= job.companyName %></a></h2>
+                <p><%= job.title %></p>
+                <p><a href="portfolio-item.html">Read More</a></p>
+              </div><!-- end card-body -->
+              <div class="card-footer">
+                <ul class="list-inline filters">
+                  <li><a href="#none">Film</a></li>
+                  <li><a href="#none">Art</a></li>
+                </ul>
+							</div><!-- end card-footer -->
+						</div>
+						<!-- /article item -->
+          </div>
+					<% }) %>
+					<div class="divider half-margins"><!-- divider -->
+						<i class="fa fa-star"></i>
+					</div>
+					<div class="col-md-6 responsive-text-center text-right">
+								<ul class="pagination">
+									<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+									<li class="active"><a href="1/1">1</a></li>
+									<li><a href="1">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+								</ul>
+					</div>
+				</div>
+				<!-- /THREE COLUMNS -->					
+			</div>
+			<!-- /center column -->
+			<!-- right column -->
+			<div class="col-md-3">
+				<!-- HOT -->
+				<h3 class="page-header">
+						<a href="magazine-category.html" data-toggle="tooltip" title="view more"><i class="fa fa-plus-square-o"></i></a>
+						<strong class="styleColor">Pick Up</strong>Works
+				</h3>
+			</div>
+		</div><!-- /.row -->
+	</div>
+</div>
+<!-- /WRAPPER -->

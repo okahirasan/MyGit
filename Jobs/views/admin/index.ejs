@@ -1,0 +1,33 @@
+<div class="main-content">
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+          try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+        </script>
+        <ul class="breadcrumb">
+          <li>
+            <i class="icon-home home-icon"></i>
+            <a href="#">Home</a>
+          </li>
+          <li class="active">Dashboard</li>
+        </ul>
+    </div>
+    <div class="page-content">
+        <div class="page-header">
+            <h1>
+              Dashboard
+            </h1>
+          </div><!-- /.page-header -->   
+          <div class="row">
+            <div class="col-xs-12">
+                <% if (admin.loginHistory.length == 1) { %>
+                <%- partial('./shared/welcome')%>
+                 <%} %>
+                <div class="row">
+                    <div class="space-6"></div>
+                    <%- partial('./shared/infobox')%>
+                    <%- partial('./shared/widget')%>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div id="switcher">
+	<form action="/lady/index/search" method="POST">
+	<div class="content-switcher tabs" >
+    <h4>検索条件　<button type="submit" class="btn btn-primary btn-xs">検索</button>
+      <select id="dispCnt" name="dispCnt" class="populate" style="width:100px;">
+			</select>
+			</h4>
+		<!-- tabs -->
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#tab1" data-toggle="tab">
+					<i class="fa fa-heart"></i> 条件 1
+				</a>
+			</li>
+			<li>
+				<a href="#tab2" data-toggle="tab">
+					<i class="fa fa-cogs"></i> 条件 2
+				</a>
+			</li>
+		</ul>
+		<!-- tabs content -->
+    <div class="tab-content">
+			<div id="tab1" class="tab-pane active">
+				<p style="color:#fff;">エリア1</p>
+				<ul>
+				<select id="adress1" name="adress1" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>        
+				<p style="color:#fff;">業種</p>
+				<ul>
+				<select id="shopType" name="shopType" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>
+				<p style="color:#fff;">カップ</p>
+				<ul>
+				<select id="bustCup" name="bustCup" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>     
+				<p style="color:#fff;">年齢</p>
+				<ul>
+				<select id="age" name="age" multiple style="width:220px;" class="populate">
+				</select>
+				</ul> 
+			</div>
+      <div id="tab2" class="tab-pane">
+        <p style="color:#fff;">身長</p>
+				<ul>
+				<select id="height" name="height" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>
+        <p style="color:#fff;">ウエスト</p>
+				<ul>
+				<select id="waist" name="waist" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>
+        <p style="color:#fff;">ヒップ</p>
+				<ul>
+				<select id="hip" name="hip" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>
+				<p style="color:#fff;">系統</p>
+				<ul>
+				<select id="looks" name="looks" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>
+				<p style="color:#fff;">出勤状況</p>
+				<ul>
+				<select id="workStatus" name="workStatus" multiple style="width:220px;" class="populate">
+				</select>
+				</ul>
+      </div>
+		</div>
+
+		<div class="text-center">
+      <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+			<button type="submit" class="btn btn-primary btn-xs">検索</button>
+		</div>
+
+		<div id="hideSwitcher">&times;</div>
+	</div>
+</div>
+
+<div id="showSwitcher" class="styleSecondColor"><i class="fa fa-angle-double-right"></i></div>

@@ -1,0 +1,54 @@
+<div class="white-row">
+		<div class="profile-user-info profile-user-info-striped">
+				<div class="profile-info-row">
+						<div class="profile-info-name"> 雇用種類 </div>
+						<div class="profile-info-value">
+								<span class="editable">
+										<% _.each(user.employMentType, function (employMentType) { %>
+										<%= employMentType.name %>
+										<% }) %>
+								</span>
+						</div>
+				</div>
+				<div class="profile-info-row">
+						<div class="profile-info-name"> 希望職種 </div>
+						<div class="profile-info-value">
+								<span class="editable">
+                    <% _.each(user.jobType, function (jobType) { %>
+										<%= jobType.name %>
+										<% }) %>
+								</span>
+						</div>
+				</div>
+				<div class="profile-info-row">
+						<div class="profile-info-name"> 現在の給与 </div>
+						<div class="profile-info-value">
+								<span class="editable"><%= user.salary_now.name %></span>
+						</div>
+				</div>
+				<div class="profile-info-row">
+						<div class="profile-info-name"> 希望給与 </div>
+						<div class="profile-info-value">
+								<span class="editable"><%= user.salary.name %></span>
+						</div>
+				</div>
+				<div class="profile-info-row">
+						<div class="profile-info-name"> 転職理由 </div>
+						<div class="profile-info-value">
+								<span class="editable"><%= user.reason.name %></span>
+						</div>
+				</div>
+				<div class="profile-info-row">
+							<div class="profile-info-name"> 希望勤務地 </div>
+							<div class="profile-info-value">
+									<span class="editable"><%= user.jobArea.name %></span>
+							</div>
+				</div>
+				<div class="profile-info-row">
+						<div class="profile-info-name"></div>
+						<div class="profile-info-value">
+							 <a href="/user/edit/<%= user.id %>/job"><button type="button" class="btn btn-primary btn-xs">編集</button></a>
+						</div>
+				</div>
+		</div>
+</div>

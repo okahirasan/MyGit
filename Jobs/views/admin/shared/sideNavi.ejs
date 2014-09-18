@@ -1,0 +1,224 @@
+<div class="sidebar" id="sidebar">
+	<script type="text/javascript">
+		try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+	</script>
+    <%- partial('sideNaviShort')%>
+	<!-- #sidebar-shortcuts -->
+	<ul class="nav nav-list">
+		<li id="HomeNavi">
+			<a href="/Admin/Index/<%= session.Admin.id %>">
+				<i class="icon-dashboard"></i>
+				<span class="menu-text"> Dashboard </span>
+			</a>
+		</li>
+
+		<li id="HomeNavi">
+			<a href="#" class="dropdown-toggle">
+				<i class="icon-user"></i>
+				<span class="menu-text"> プロフィール </span>
+        <b class="arrow icon-angle-down"></b>
+			</a>
+			<ul class="submenu">
+				<li>
+					<a href="/Admin/profile/<%= session.Admin.id %>">
+						<i class="icon-double-angle-right"></i>
+						プロフィール管理
+					</a>
+				</li>
+
+				<li>
+					<a href="/Admin/edit/">
+						<i class="icon-double-angle-right"></i>
+						編集
+					</a>
+				</li>
+			</ul>
+		</li>
+				
+		<li id="CompanyNavi">
+			<a href="#" class="dropdown-toggle">
+				<i class="icon-building"></i>
+				<span class="menu-text"> 店舗 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<% if (session.Admin.email == "h1ra0kabean@gmail.com") { %>
+        <li>
+					<a href="/Admin/adminList/">
+						<i class="icon-double-angle-right"></i>
+						管理者一覧
+					</a>
+				</li>
+				<li>
+					<a href="/Admin/shopList/">
+						<i class="icon-double-angle-right"></i>
+						一覧
+					</a>
+				</li>
+				<% } %>
+				<li>
+					<a href="/Admin/EditShop/">
+						<i class="icon-double-angle-right"></i>
+						店舗情報の編集
+					</a>
+				</li>
+				<li>
+					<a href="/Company/Create/">
+						<i class="icon-double-angle-right"></i>
+						店舗追加 登録
+					</a>
+				</li>
+			</ul>
+		</li>
+
+		<li id="JobNavi">
+			<a href="#" class="dropdown-toggle">
+				<i class="icon-female"></i>
+				<span class="menu-text"> 女の子 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+          <% if (session.Admin.email == "h1ra0kabean@gmail.com") { %>
+					<a href="/Admin/ladysList/">
+          <% } else { %>
+          <a href="/Admin/ladysList2/">
+          <% } %>
+						<i class="icon-double-angle-right"></i>
+						一覧
+					</a>
+				</li>
+
+				<li>
+					<a href="/Admin/AddLady/">
+						<i class="icon-double-angle-right"></i>
+						作成
+					</a>
+				</li>
+      </ul>
+		</li>
+		
+		<li class="active">
+			<a href="/Admin/workCalendar">
+				<i class="icon-calendar"></i>
+
+				<span class="menu-text">
+					出勤管理
+					<span class="badge badge-transparent tooltip-error" title="2&nbsp;Important&nbsp;Events">
+						<i class="icon-warning-sign red bigger-130"></i>
+					</span>
+				</span>
+			</a>
+		</li>
+		
+    <li id="HomeNavi">
+			<a href="#" class="dropdown-toggle">
+				<i class="icon-desktop"></i>
+				<span class="menu-text"> ホームページ </span>
+        <b class="arrow icon-angle-down"></b>
+			</a>
+			<ul class="submenu">
+				<li>
+					<a href="/Admin/edit/">
+						<i class="icon-double-angle-right"></i>
+						編集
+					</a>
+				</li>
+			</ul>
+		</li>
+			
+    <li id="adv">
+			<a href="#" class="dropdown-toggle">
+				<i class=" icon-envelope-alt"></i>
+				<span class="menu-text"> Mail </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="/OtherSite/Index/">
+						<i class="icon-double-angle-right"></i>
+						作成
+					</a>
+				</li>
+				<li>
+					<a href="/OtherSite/CreateBatch/">
+						<i class="icon-double-angle-right"></i>
+						受信履歴
+					</a>
+				</li>
+				
+        <li>
+					<a href="/OtherSite/Index/">
+						<i class="icon-double-angle-right"></i>
+						送信履歴
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+		<li id="worker">
+			<a href="#" class="dropdown-toggle">
+				<i class="icon-user"></i>
+				<span class="menu-text"> メール会員 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="/user/index/">
+						<i class="icon-double-angle-right"></i>
+						検索
+					</a>
+				</li>
+
+				<li>
+					<a href="/OtherSite/CreateBatch/">
+						<i class="icon-double-angle-right"></i>
+						お気に入り
+					</a>
+				</li>
+			</ul>
+		</li>
+		
+		<li id="adv">
+			<a href="#" class="dropdown-toggle">
+				<i class="icon-bullhorn"></i>
+				<span class="menu-text"> 広告 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="/OtherSite/Index/">
+						<i class="icon-double-angle-right"></i>
+						作成
+					</a>
+				</li>
+
+				<li>
+					<a href="/OtherSite/CreateBatch/">
+						<i class="icon-double-angle-right"></i>
+						一覧
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul><!-- /.nav-list -->
+
+	<div class="sidebar-collapse" id="sidebar-collapse">
+		<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+	</div>
+
+	<script type="text/javascript">
+		try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+	</script>
+
+</div>

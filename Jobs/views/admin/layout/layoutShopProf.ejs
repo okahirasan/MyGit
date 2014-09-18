@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title %></title>
+    <meta name="description" content="3 styles with inline editable feature" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link href="/plugins/ace/styles/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/plugins/ace/styles/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/plugins/ace/styles/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/jquery-ui-1.10.3.custom.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/jquery.gritter.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/select2.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/bootstrap-editable.css" />
+    <!-- fonts -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/plugins/ace/styles/ace.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-rtl.min.css" />
+    <link rel="stylesheet" href="/plugins/ace/styles/ace-skins.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="/plugins/ace/styles/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="/plugins/ace/js/ace-extra.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/plugins/ace/js/html5shiv.js"></script>
+    <script src="/plugins/ace/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body>
+      <div class="navbar" id="navbar">
+      <script type="text/javascript">
+        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+      </script>
+        <%- partial('../shared/topNavi')%>
+      </div>
+      <div class="main-container container-fluid">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+          <span class="menu-text"></span>
+        </a>
+        <%- partial('../shared/sideNavi')%>
+        <%- body %>
+        <!-- /.main-content -->
+      </div><!-- /.main-container -->
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+      <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+
+    <!-- Bring in the socket.io client -->
+    <script type="text/javascript" src="/js/socket.io.js"></script>
+    <!-- then beef it up with some convenience logic for talking to Sails.js -->
+    <script type="text/javascript" src="/js/sails.io.js"></script>
+    <!-- listen on socket.io for incoming messages -->
+		<script src="/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
+    <!-- basic scripts -->
+
+    <!--[if !IE]> -->
+
+    <script type="text/javascript">
+            window.jQuery || document.write("<script src='/plugins/ace/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!-- <![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='/plugins/ace/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+            if("ontouchend" in document) document.write("<script src='/plugins/ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="/plugins/ace/js/bootstrap.min.js"></script>
+    <script src="/plugins/ace/js/typeahead-bs2.min.js"></script>
+    <!-- page specific plugin scripts -->
+    <!--[if lte IE 8]>
+      <script src="/plugins/ace/js/excanvas.min.js"></script>
+    <![endif]-->
+		<script src="/plugins/ace/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="/plugins/ace/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/plugins/ace/js/jquery.gritter.min.js"></script>
+		<script src="/plugins/ace/js/bootbox.min.js"></script>
+		<script src="/plugins/ace/js/jquery.slimscroll.min.js"></script>
+		<script src="/plugins/ace/js/jquery.easy-pie-chart.min.js"></script>
+		<script src="/plugins/ace/js/jquery.hotkeys.min.js"></script>
+		<script src="/plugins/ace/js/bootstrap-wysiwyg.min.js"></script>
+		<script src="/plugins/ace/js/select2.min.js"></script>
+		<script src="/plugins/ace/js/date-time/bootstrap-datepicker.min.js"></script>
+		<script src="/plugins/ace/js/fuelux/fuelux.spinner.min.js"></script>
+		<script src="/plugins/ace/js/x-editable/bootstrap-editable.min.js"></script>
+		<script src="/plugins/ace/js/x-editable/ace-editable.min.js"></script>
+		<script src="/plugins/ace/js/jquery.maskedinput.min.js"></script>
+		<script src="/plugins/ace/js/bootstrap-colorpicker.min.js"></script>
+
+    <!-- ace scripts -->
+    <script src="/plugins/ace/js/ace-elements.min.js"></script>
+    <script src="/plugins/ace/js/ace.min.js"></script>
+    <script src="/plugins/ace/js/ace-prof.js"></script>
+    <script src="/plugins/ace/js/ace-Origin.js"></script>
+    <script src="/plugins/ace/js/bootstrap-tag.min.js"></script>
+		<script src="/js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="/js/customLadyProfValidate.js"></script>
+		
+    <script>
+		jQuery(function($) {
+			//skin設定
+			var body = $(document.body);
+			body.addClass('skin-2');
+			//女の子のテーマカラー
+			$('[data-rel=tooltip]').tooltip({container:'body'});
+			$('.input-mask-phone').mask('999-9999-9999');
+			//タグのデータセット
+			SetDataTags1("drpTags");
+			SetDataTags2();
+			
+			$('#id-input-file-3').ace_file_input({
+					style:'well',
+					btn_choose:'Drop files here or click to choose',
+					btn_change:null,
+					no_icon:'icon-cloud-upload',
+					droppable:true,
+					thumbnail:'small'//large | fit
+					//,icon_remove:null//set null, to hide remove/reset button
+					/**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+					/**,before_remove : function() {
+						return true;
+					}*/
+					,
+					preview_error : function(filename, error_code) {
+						//
+						alert("error")
+						//name of the file that failed
+						//error_code values
+						//1 = 'FILE_LOAD_FAILED',
+						//2 = 'IMAGE_LOAD_FAILED',
+						//3 = 'THUMBNAIL_FAILED'
+						//alert(error_code);
+					}
+			
+				}).on('change', function(files){
+				//alert(files);
+				//for(var key in files){
+				//alert(key +" : "+files[key]);
+				//	}
+					var list = ($(this).data('ace_input_files'));
+					for (var i=0; i < list.length; i++) {
+							if (!list[i].type.match('image.*')) {
+								continue;
+							}
+							var reader = new FileReader();
+							reader.onload = (function(theFile) {
+								return function(e) {
+										//alert(e.target.result);
+                    $.ajax({
+											type: 'GET',
+											url: '/common/PostImage/' + '' + '_' + i,
+											data: {imageData : e.target.result},
+											dataType: 'json',
+											success: function(json){
+											},
+											error: function(err){
+
+											}
+											});
+													
+													
+									// Render thumbnail.
+									//alert(e.target.result)
+									//var span = document.createElement('span');
+									//span.innerHTML = ['<img class="thumb" src="', e.target.result,
+									//									'" title="', escape(theFile.name), '"/>'].join('');
+									//document.getElementById('list').insertBefore(span, null);
+								};
+							})(list[i]);
+							//alert(list[i]);
+							// Read in the image file as a data URL.
+							reader.readAsDataURL(list[i]);
+						
+								
+					}
+					//alert($(this).data('ace_input_method'));
+					//console.log($(this).data('ace_input_method'));
+				});
+
+		
+        // *** editable avatar *** //
+				try {//ie8 throws some harmless exception, so let's catch it
+					if( /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ) Image.prototype.appendChild = function(el){}
+					var last_gritter
+					$('.ladyImage').editable({
+						type: 'image',
+						name: 'avatar',
+						value: null,
+						image: {
+							btn_choose: 'クリックしてください',
+							droppable: true,
+							name: 'ladyImage',//put the field name here as well, will be used inside the custom plugin
+							max_size: 310000,//~100Kb
+							on_error : function(code) {//on_error function will be called when the selected file has a problem
+								if(last_gritter) $.gritter.remove(last_gritter);
+								if(code == 1) {//file format error
+									last_gritter = $.gritter.add({
+										title: '画像ファイルではありません!',
+										text: 'ファイルの拡張子はjpg|gif|png になります!',
+										class_name: 'gritter-error gritter-center'
+									});
+								} else if(code == 2) {//file size rror
+									last_gritter = $.gritter.add({
+										title: 'ファイルがサイズオーバーです!',
+										text: '100Kb以内にしてください!',
+										class_name: 'gritter-error gritter-center'
+									});
+								}
+								else {//other error
+								}
+							},
+							on_success : function(data) {
+								//alert($(this).attr('id'));
+								//var tesVal = ('#image1').next().find('input[type=file]]:eq(0)');
+								//alert("1");
+								
+								$.gritter.removeAll();
+							}
+						},
+					    url: function(params) {
+								//alert("2");
+							// ***UPDATE AVATAR HERE*** //
+							//You can replace the contents of this function with examples/profile-avatar-update.js for actual upload
+			
+			
+							var deferred = new $.Deferred
+			
+							//if value is empty, means no valid files were selected
+							//but it may still be submitted by the plugin, because "" (empty string) is different from previous non-empty value whatever it was
+							//so we return just here to prevent problems
+							//alert($(this).attr('id'));
+							var aid = $(this).attr('id');
+							var value = $('#' + aid).next().find('input[type=hidden]:eq(0)').val();
+							
+							//alert(tesVal);
+							if(!value || value.length == 0) {
+															//	alert("3");
+
+								deferred.resolve();
+								return deferred.promise();
+							}	
+			
+							//dummy upload
+							setTimeout(function(){
+											//					alert("4");
+
+								if("FileReader" in window) {
+									//for browsers that have a thumbnail of selected image
+                  //var aid = $(this).attr('id');
+									var thumb = $('#' + aid).next().find('img').data('thumb');
+									//var aa = $('#' + aid).next().find('img');
+									//checkObject(aa);
+									if(thumb) $('#' + aid).get(0).src = thumb;
+								}
+								
+								deferred.resolve({'status':'OK'});
+			
+								if(last_gritter) $.gritter.remove(last_gritter);
+								last_gritter = $.gritter.add({
+									title: '画像 アップデート完了!',
+									text: '',
+									class_name: 'gritter-info gritter-center'
+								});
+								
+							 } , parseInt(Math.random() * 800 + 800))
+
+							return deferred.promise();
+						},
+						
+						success: function(response, newValue) {
+							//var id = $('#adminid').attr("value");
+              var aid = $(this).attr('id');
+							var $input = $('[name=ladyImage]');
+							var extension = getExtention($input.val());
+							//var file = $(this).prop('files')[0];
+							//var fileName = file.name;
+							//alert(file);
+							//var fileList = document.getElementByName("ladyImage").files;
+							//alert(newValue);
+							//checkObject(response);
+							//alert($('#avatar').next().find('img').data('thumb'));
+							var data = $.ajax({
+							type: 'GET',
+							url: '/admin/FileUploadLady/' + ladyID + "/" + aid + "/" + extension,
+							data: {imageData : $('#' + aid).get(0).src},
+							dataType: 'json',
+							success: function(json){
+								$(tbo).click();
+							},
+							error:function(){
+								alert("error")
+							}
+							});
+						}
+					})
+				}catch(e) {}
+
+		});
+										function checkObject(_obj){
+  for(var key in _obj){
+    alert(key +" : "+_obj[key]);
+  }
+}
+
+		function getExtention(fileName) {
+			var ret;
+			if (!fileName) {
+				return ret;
+			}
+			var fileTypes = fileName.split(".");
+			var len = fileTypes.length;
+			if (len === 0) {
+				return ret;
+			}
+			ret = fileTypes[len - 1];
+			return ret;
+		}
+    // SetDropDown start
+		function SetDropDown(value,setId,isMulti,data) {
+			$.ajax({
+				type: 'GET',
+				url: '/common/GetOption/' + value,
+				dataType: 'json',
+				success: function(json){
+					var optionItems = new Array();
+					optionItems.push(new Option("", ""));
+					for (cnt in json) {
+						if (optionItems.indexOf(json[cnt].name) == -1) {
+							optionItems.push(json[cnt].name);
+						}
+						optionItems.push(new Option(json[cnt].name, json[cnt].id));
+					}
+					$('#' + setId).append(optionItems);
+					if (isMulti) {
+						//var jsonText = JSON.stringify(data);
+            $("#" + setId).select2(
+						{placeholder: "選択してください。複数選択可能です。",
+						allowClear: true}
+						);
+						if (setId == "drpTags" ) {
+							SetDataTags1(setId);
+						}
+
+					}else{
+            var array = [data];
+						$('#' + setId).val(array).select2();
+					}
+				}
+			});
+		};
+    // SetDropDown end
+		    // SetDropDown start
+		function SetDropDownNormal(value,setId,data) {
+			$.ajax({
+				type: 'GET',
+				url: '/common/GetOption/' + value,
+				dataType: 'json',
+				success: function(json){
+					var optionItems = new Array();
+					for (cnt in json) {
+						optionItems.push(new Option(json[cnt].name, json[cnt].id));
+					}
+					$('#' + setId).append(optionItems);
+					if (setId == "simple-colorpicker-1") {
+						$('#' + setId).val(data);
+						$('#simple-colorpicker-1').ace_colorpicker();
+					}else{
+            $('#' + setId).val(data);
+					}
+					//alert(data)
+					//var array = [data];
+				}
+			});
+		};
+		function SetDataTags1(setId) {
+			var dataArray = [];
+			$('#' + setId).val(dataArray).select2();
+		}
+		function SetDataTags2() {
+			var dataArray = [];
+			//$('#form-field-tags').val("test");
+		}
+		// tab設定
+		var editID = "<%= req.session.currentTab%>";
+		jQuery("#li-" + editID.replace("edit","tab")).addClass('active');
+		jQuery("#" + editID.replace("tab","edit")).addClass('active');
+			
+		// tabクリック
+		$(".tab-prof").click(function(){
+				$("#hidTab").val(this.id);
+		});
+		$("#btnSave_prof").click(function(){
+		$('#hiddenLooks').val($('#drpLooks option:selected').text());
+		$('#hiddenBodyType').val($('#drpBodyType option:selected').text());
+		$('#hiddenBustType').val($('#drpBustType option:selected').text());
+		$('#hiddenSmType').val($('#drpSmType option:selected').text());
+			
+			
+			
+			
+			//$('#hiddenTags').val($('#drpTags option:selected').text());
+			//$('#positionName').val($('#position option:selected').text());
+			//$('#adress1Name').val($('#area1 option:selected').text());
+			//$('#adress2Name').val($('#area2 option:selected').text());
+			//$('#lineName').val($('#nearLine option:selected').text());
+			//$('#stationName').val($('#nearStation option:selected').text());
+		});
+		
+		
+    </script>
+    </body>
+</html>

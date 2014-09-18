@@ -1,0 +1,160 @@
+<div id="edit-company" class="tab-pane">
+	<h4 class="header blue bolder smaller">General</h4>
+	<!-- general -->	
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="companyName">ショップ名</label>				
+				<div class="col-sm-9">
+					<input class="col-xs-12 col-sm-10" type="text" id="companyName" placeholder="ショップ名" name="companyName" value="<%= shop.name%>"/>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="kabu">株式情報</label>				
+				<div class="col-sm-4">
+					<select class="form-control" id="stock" name="stock">
+					</select>
+				</div>
+			</div>
+      <div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="foundingDate">設立日</label>					
+				<div class="col-sm-9">
+					<div class="input-medium">
+						<div class="input-group">
+							<% if (typeof company.birth != "undefined") { %>  
+							<input class="input-medium date-picker" id="foundingDate" name="birth" type="text" data-date-format="yyyy/mm" placeholder="yyyy/mm"  value="<%= company.birth%>"/>
+							<% } else { %>                                                           
+							<input class="input-medium date-picker" id="foundingDate" name="birth" type="text" data-date-format="yyyy/mm" placeholder="yyyy/mm" />
+							<% } %> 
+							<span class="input-group-addon">
+								<i class="icon-calendar"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+      <div class="space-4"></div>
+
+      <div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="ceo">代表者</label>				
+				<div class="col-sm-9">
+					<input class="col-xs-12 col-sm-10" type="text" id="representative" name="representative" placeholder="代表者名" value="<%= company.representative%>" />
+				</div>
+			</div>
+      <div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="ceo">代表者：役職</label>				
+				<div class="col-sm-6">
+					<select class="form-control" id="position" name="position">
+					</select>
+				</div>
+			</div>
+      <div class="space-4"></div>
+				
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="companyName">資本金</label>				
+				<div class="col-sm-9">
+					<span class="input-icon input-icon-right">
+					<input type="text" id="capital" name="capital" value="<%= company.capital%>"/>
+					万円
+					</span>
+				</div>
+			</div>
+			<div class="space-4"></div>
+				
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="companyName">従業員数</label>				
+				<div class="col-sm-9">
+					<span class="input-icon input-icon-right">
+					<input type="text" id="memberTotal" name="memberTotal" value="<%= company.memberTotal%>"/>
+					人
+					</span>
+				</div>
+			</div>
+			<div class="space-4"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="companyName">事業内容</label>				
+				<div class="col-sm-9">
+					<input type="text" name="businessContent" id="form-field-tags" value="<%= company.businessContent%>"/>
+				</div>
+			</div>
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="phone">webサイト</label>
+				<div class="col-xs-12 col-sm-9">
+					<div class="input-group">
+						<span class="input-group-addon">
+							http://
+						</span>
+						<input class="col-xs-12 col-sm-10" type="tel" id="webSite" name="webSite" value="<%= company.webSite%>"/>
+					</div>
+				</div>
+			</div>
+				
+		</div>
+	</div>
+	
+	<!-- adress -->
+	<h4 class="header blue bolder smaller">Address</h4>
+	<!-- adress -->	
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="companyName">都道府県</label>				
+			<div class="col-sm-4">
+			<select class="form-control" id="adress1" name="adress1">
+			</select>
+			</div>
+		</div>
+			
+    <div class="space-4"></div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="companyName">市区群町村</label>				
+			<div class="col-sm-6">
+				<select class="form-control" id="adress2" name="adress2">
+				</select>
+			</div>
+		</div>
+		
+		<div class="space-4"></div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="companyName">町名・番地・建物名</label>				
+			<div class="col-sm-9">
+				<input class="col-xs-12 col-sm-10" type="text" name="adress3" id="form-field-tags" value="<%= company.adress3%>"/>
+			</div>
+		</div>		
+			
+		
+		<div class="space-4"></div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="nearLine">最寄りの路線</label>				
+			<div class="col-sm-6">
+				<select class="form-control" id="nearLine" name="nearLine">
+				</select>
+			</div>
+		</div>
+		
+		
+		<div class="space-4"></div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label no-padding-right" for="nearStation">最寄りの駅</label>				
+			<div class="col-sm-6">
+				<select class="form-control" id="nearStation" name="nearStation">
+				</select>
+			</div>
+		</div>
+		
+				
+		</div>
+	</div>
+	
+</div>

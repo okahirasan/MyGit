@@ -1,0 +1,246 @@
+<!-- WRAPPER -->
+<div id="wrapper">
+  <div id="divFirst">
+    <!-- REVOLUTION SLIDER -->
+    <%- partial('./mainAds')%>
+    <!-- /REVOLUTION SLIDER -->
+    <!-- WELCEOME -->
+    <div style="display:none">
+    <section class="container">
+      <h1 class="text-center">
+        <strong>Welcome</strong> to JobEat
+        <span class="subtitle">あたなの就活ライフをより快適に！！</span>
+      </h1>
+    </section>
+    <!-- CALLOUT -->
+    <div class="bs-callout text-center nomargin-bottom">
+      <h3>会員登録してみませんか? <a href="contact-us.html" target="_blank" class="btn btn-primary btn-lg">無料登録する!</a></h3>
+    </div>
+    </div>
+    <!-- /CALLOUT -->
+  </div>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="margin-top:150px;">
+        <div class="modal-content">
+          <form action="/home" method="POST">
+          <div class="modal-header"><!-- modal header -->
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="btnAddresSpot">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">就活エリア</h4>
+          </div><!-- /modal header -->
+    
+          <!-- modal body -->
+          <div class="modal-body">
+            <p style="color:#000;">エリア</p>
+            <ul>
+            <select id="spotArea1" name="spotArea1" multiple style="width:230px;" class="populate">
+            </select>
+            </ul>
+          </div>
+          <!-- /modal body -->
+          <div class="modal-footer"><!-- modal footer -->
+            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+            <button class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">登録</button>
+          </div><!-- /modal footer -->
+          </form>
+        </div>
+      </div>
+    </div>
+  <div id="divNormal">
+    <div class="container magazine top-no-header">
+      <div class="row">
+        <!-- center column -->
+        <section class="container re-filterbox no-top"><!-- add "styleBackground" class for colored box -->
+          <form id="re-filter" action="realestate-list.html" method="get">
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                  <label>Property ID</label>
+                  <input type="text" class="form-control" name="re_id" />
+                </div>
+  
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                  <label>Location</label>
+                  <select class="form-control" name="re_location">
+                    <option value="0">Any</option>
+                    <option value="1">New York</option>
+                    <option value="2">Los Angeles</option>
+                    <option value="3">Las Vegas</option>
+                    <option value="4">Palo Alto, SA</option>
+                    <option value="5">Silcon Valey, SA</option>
+                  </select>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  <label>Type</label>
+                  <select class="form-control" name="re_type">
+                    <option value="0">Any</option>
+                    <option value="1">Apartment</option>
+                    <option value="2">Villa</option>
+                    <option value="3">Family House</option>
+                    <option value="4">Condo</option>
+                    <option value="5">Cottage</option>
+                    <option value="6">Building Area</option>
+                    <option value="7">Single Home</option>
+                  </select>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  <label>Property Status</label>
+                  <select class="form-control" name="re_status">
+                    <option value="0">Any</option>
+                    <option value="1">Rent</option>
+                    <option value="2">Sale</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-2 col-sm-6 col-xs-6">
+                  <label>Beds</label>
+                  <select class="form-control" name="re_beds">
+                    <option value="0">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10+">10+</option>
+                  </select>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-6">
+                  <label>Baths</label>
+                  <select class="form-control" name="re_baths">
+                    <option value="0">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10+">10+</option>
+                  </select>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-6">
+                  <label>Price From</label>
+                  <select class="form-control" name="re_price_from">
+                    <option value="0">Any</option>
+                    <option value="1000">$1000</option>
+                    <option value="2000">$2000</option>
+                    <option value="3000">$3000</option>
+                    <option value="5000">$5000</option>
+                    <option value="10000">$10000</option>
+                    <option value="2000">$2000</option>
+                    <option value="100000">$100000</option>
+                    <option value="300000">$300000</option>
+                    <option value="1000000+">1000000+</option>
+                  </select>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-6">
+                  <label>Price To</label>
+                  <select class="form-control" name="re_price_to">
+                    <option value="0">Any</option>
+                    <option value="1000">$1000</option>
+                    <option value="2000">$2000</option>
+                    <option value="3000">$3000</option>
+                    <option value="5000">$5000</option>
+                    <option value="10000">$10000</option>
+                    <option value="2000">$2000</option>
+                    <option value="100000">$100000</option>
+                    <option value="300000">$300000</option>
+                    <option value="1000000+">1000000+</option>
+                  </select>
+                </div>
+  
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                  <label>&nbsp;</label>
+                  <button class="btn btn-primary fullwidth">FILTER NOW</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+        <!-- /FILTER BOX -->
+  
+        <div class="col-md-9">
+          <div class="row">
+            <h3 class="page-header nomargin-top">
+              <a href="realestate-list.html" data-toggle="tooltip" title="view more"><i class="fa fa-plus-square-o"></i></a> 
+              募集中 <strong class="styleColor">求人一覧</strong> 
+            </h3>
+            <div class="col-md-3 text-left responsive-text-center">
+								<p class="hidden-xs pull-left nomargin padding30"><strong>Showing</strong> 1-10 of 38 results.</p>
+						</div>
+            <div class="col-md-6 text-right">
+              <ul class="pagination">
+                <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <hr class="mini-margins" /><!-- separator -->
+                      <!-- article summary -->
+            <%- partial('./article_Normal_Job')%>
+            <!-- /article summary -->
+        </div>
+        <!-- right column -->
+        <div class="col-md-3">
+          <!-- HOT -->
+          <h3 class="page-header nomargin-top">
+            Today's <strong class="styleColor">Hot</strong>
+          </h3>
+  
+    <object width="360" height="284" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+      <param name="flashvars" value="cid=8844538&amp;autoplay=false&amp;style=ub85a901:lc85a901:ocffffff:ucffffff&amp;locale=ja_JP"/>
+      <param name="allowfullscreen" value="true"/>
+      <param name="allowscriptaccess" value="always"/>
+      <param name="src" value="http://www.ustream.tv/flash/viewer.swf"/>
+      <embed flashvars="cid=8844538&amp;autoplay=false&amp;style=ub85a901:lc85a901:ocffffff:ucffffff&amp;locale=ja_JP" width="360" height="284" allowfullscreen="true" allowscriptaccess="always" src="http://www.ustream.tv/flash/viewer.swf" type="application/x-shockwave-flash"></embed>
+    </object>
+<br /><a href="http://www.ustream.tv" style="font-size: 12px; line-height: 20px; font-weight: normal; text-align: left;" target="_blank">Broadcast live streaming video on Ustream</a>  
+  
+    
+        </div>
+        <!-- /right column -->
+      </div><!-- /.row -->
+    </div>
+  </div>
+</div>
+<!-- /WRAPPER -->
+<style>
+  hr.mini-margins {
+		margin:0 0 15px 0;
+	}
+  .testimonialImg{
+  background-repeat:no-repeat;
+	background-position:16px 25px;
+  padding-left:52px;
+  }
+  .re-filterbox {
+	background-color:#fff;
+	padding:60px 20px;
+	display:block;
+	margin-bottom:60px;
+}
+.re-filterbox.no-top { 
+	margin-top:-100px;
+	position:relative;
+	z-index:150;
+	border:#F3F4F6 10px solid;
+
+	-webkit-border-radius: 16px;
+	   -moz-border-radius: 16px;
+			border-radius: 16px;
+}
+</style>
